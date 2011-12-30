@@ -1,0 +1,1 @@
+"D:\TAU\TI_CCS5\ccsv5\tools\compiler\msp430\bin\hex430.exe" --ti_txt "Debug/GPS Tracker.out" -o GPS.txt -order MS -romwidth 16
