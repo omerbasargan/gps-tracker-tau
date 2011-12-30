@@ -5,29 +5,39 @@
 #include <msp430f2618.h>
 
 #include "hw_conf.h"
+#include "drivers/timer.h"
 #include "drivers/uart.h"
 #include "drivers/gps.h"
+#include "drivers/sd/sd.h"
 
 void hw_setup(void);
 
 // TODO remove this!
-char lines[5][128];
+unsigned char lines[5][128];
+unsigned char lengths[5];
+
+#define HEADER_LEN 14
+#define FOOTER_LEN 12
+const char header_str[HEADER_LEN] = "Start of file\n";
+const char footer_str[FOOTER_LEN] = "End of file\n";
 
 void main(void)
 {
   char buf[1];
   int nextIn = 0;
   int curLine = 0;
+  int i;
   volatile unsigned long dummy;
 
   WDTCTL = WDTPW | WDTHOLD; // stop watch-dog timer
 
   hw_setup();
   uart_init();
+  sd_init();
   gps_init();
 
-	while ( 1 ) 
-	{
+//	while ( 1 )
+//	{
     LED_ON(); // Use break point here
 
     while (curLine < 5)
@@ -38,14 +48,35 @@ void main(void)
         lines[curLine][nextIn++] = buf[0];
         if (buf[0] == '\n')
         {
+          lengths[ curLine++ ] = nextIn;
           nextIn = 0;
-          curLine++;
         }
       }
     }
 
+    sd_open((unsigned char*)"file.txt"); // sets SD driver to write to "file.txt"
+    if ( ! sd_error() )
+    {
+      sd_write(HEADER_LEN, (unsigned char*)header_str);
+      for ( i = 0; i < 5; i++ )
+      {
+        sd_write( lengths[i], lines[i] );
+      }
+      sd_write(FOOTER_LEN, (unsigned char*)footer_str);
+    }
+    sd_close();
+
+    if ( sd_error() )
+    { // if there was an error, twinkle once
+      LED_OFF();
+      for ( i = 0; i < 10; i++ )
+        wait(50);
+      LED_ON();
+      for ( i = 0; i < 10; i++ )
+        wait(50);
+    }
     LED_OFF();
-  }
+//  }
   __disable_interrupt();
   while (1);
 }
