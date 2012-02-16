@@ -35,23 +35,9 @@ void sd_init(void)
   SD_CS_DIR |= SD_CS_BIT; // set as output
   sd_clr_cs();
 
-  // Card detect
-  SD_CD_DIR &= ~SD_CD_BIT;
-
   sd_spi_init();
-
-  if ( ! sd_card_detect() )
-  {
-    sd_error_ = SD_NO_CARD;
-  }
-  else
-  {
-    sd_error_ = SD_OK;
-  }
-
-  if ( ! sd_error() )
-    mmcInit();
-
+  sd_error_ = SD_OK;
+  mmcInit();
 }
 
 void sd_open(sd_str_t filename)

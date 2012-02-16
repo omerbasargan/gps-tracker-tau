@@ -36,11 +36,6 @@
 #define SD_SPI_SIMO BIT1
 #define SD_SPI_SOMI BIT2
 #define SD_SPI_CLK  BIT3
-//    Card detect
-#define SD_CD_DIR P3DIR
-#define SD_CD_IN  P3IN
-#define SD_CD_BIT BIT4
-#define sd_card_detect() (!(SD_CD_IN & SD_CD_BIT))
 //    Chip Select
 #define SD_CS_DIR P3DIR
 #define SD_CS_OUT P3OUT
@@ -49,11 +44,11 @@
 #define sd_clr_cs() SD_CS_OUT |= SD_CS_BIT
 #define sd_init_cs() SD_CS_DIR |= SD_CS_BIT
 //    IFG macros
- #define sd_spi_rx_buf  UCA0RXBUF
- #define sd_spi_send(x) UCA0TXBUF=(x)
- #define sd_spi_tx_ready()  (IFG2&UCA0TXIFG)
- #define sd_spi_tx_done  (UCA0STAT&UCBUSY)
- #define sd_spi_rx_ready() (IFG2&UCA0RXIFG)
- #define sd_spi_rx_FG_clr() IFG2 &= ~UCA0RXIFG
+ #define sd_spi_rx_buf  UCB0RXBUF
+ #define sd_spi_send(x) UCB0TXBUF=(x)
+ #define sd_spi_tx_ready()  (IFG2&UCB0TXIFG)
+ #define sd_spi_tx_done  (UCB0STAT&UCBUSY)
+ #define sd_spi_rx_ready() (IFG2&UCB0RXIFG)
+ #define sd_spi_rx_FG_clr() IFG2 &= ~UCB0RXIFG
 
 #endif /* HW_CONF_H_ */
