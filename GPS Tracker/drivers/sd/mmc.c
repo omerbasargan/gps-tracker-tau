@@ -472,10 +472,12 @@ char mmcReadRegister (const char cmd_register, const unsigned char length, unsig
 
 char mmcPing(void)
 {
-  if (sd_card_detect())
-    return (MMC_SUCCESS);
-  else
-    return (MMC_INIT_ERROR);
+//  if (sd_card_detect())
+//    return (MMC_SUCCESS);
+//  else
+//    return (MMC_INIT_ERROR);
+  // TODO
+  return (MMC_SUCCESS);
 }
 
 

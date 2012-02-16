@@ -33,7 +33,13 @@ void main(void)
 
   hw_setup();
   uart_init();
+  
+  GPS_OFF();
+  
   sd_init();
+  
+  GPS_ON();
+  
   gps_init();
 
 //	while ( 1 )

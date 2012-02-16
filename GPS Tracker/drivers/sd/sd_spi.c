@@ -11,12 +11,12 @@ void sd_spi_init(void)
   //
 
   // hold USCI in reset
-  UCA0CTL1 |= UCSWRST;
+  UCB0CTL1 |= UCSWRST;
 
-  UCA0CTL0 = UCMST | UCMSB | UCSYNC ; // 3 Pin SPI, Master mode, MSB 1st
-  UCA0CTL1 |= UCSSEL_3; // Clock source is SMCLK (8MHz)
-  UCA0BR0 = 20; // Bit Rate = 8 MHz / 20 = 400 KHz
-  UCA0BR1 = 0;
+  UCB0CTL0 = UCMST | UCMSB | UCSYNC ; // 3 Pin SPI, Master mode, MSB 1st
+  UCB0CTL1 |= UCSSEL_3; // Clock source is SMCLK (8MHz)
+  UCB0BR0 = 20; // Bit Rate = 8 MHz / 20 = 400 KHz
+  UCB0BR1 = 0;
 
   //
   // Init ports
@@ -28,8 +28,8 @@ void sd_spi_init(void)
   SD_SPI_SEL |= (SD_SPI_SIMO|SD_SPI_CLK|SD_SPI_SOMI); // USCI selected
 
   // Start the SPI
-  UCA0CTL1 &= ~UCSWRST; // clear reset
-//  IE2 |= (UCA0TXIE|UCA0RXIE); // enable interrupts
+  UCB0CTL1 &= ~UCSWRST; // clear reset
+//  IE2 |= (UCB0TXIE|UCB0RXIE); // enable interrupts
 }
 
 void sd_spi_write(sd_byte_arr_t bytes, unsigned int len)
