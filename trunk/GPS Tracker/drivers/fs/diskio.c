@@ -8,7 +8,7 @@
 #include "msp430f2618.h"
 
 #include "diskio.h"
-#include "MMC.h"
+#include "sd/MMC.h"
 #include "hw_conf.h"
 
 void sd_hw_init(void)

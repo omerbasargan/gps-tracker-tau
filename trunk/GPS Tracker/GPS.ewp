@@ -317,9 +317,9 @@
         </option>
         <option>
           <name>newCCIncludePaths</name>
-          <state>C:\Users\owner\Code\TAU project\GPS Tracker\drivers\sd</state>
-          <state>C:\Users\owner\Code\TAU project\GPS Tracker\drivers\fs</state>
           <state>C:\Users\owner\Code\TAU project\GPS Tracker</state>
+          <state>C:\Users\owner\Code\TAU project\GPS Tracker\drivers</state>
+          <state>C:\Users\owner\Code\TAU project\GPS Tracker\drivers\fs</state>
         </option>
         <option>
           <name>CCStdIncCheck</name>
@@ -1787,10 +1787,10 @@
     <name>$PROJ_DIR$\main.c</name>
   </file>
   <file>
-    <name>$PROJ_DIR$\drivers\sd\mmc.c</name>
+    <name>$PROJ_DIR$\drivers\fs\sd\mmc.c</name>
   </file>
   <file>
-    <name>$PROJ_DIR$\drivers\sd\sd_spi.c</name>
+    <name>$PROJ_DIR$\drivers\fs\sd\sd_spi.c</name>
   </file>
   <file>
     <name>$PROJ_DIR$\drivers\timer.c</name>
