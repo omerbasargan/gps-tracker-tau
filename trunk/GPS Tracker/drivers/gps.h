@@ -9,6 +9,6 @@
 #define GPS_H_
 
 void gps_init(void);
-
+char IsGPSFix(char* line);
 
 #endif /* GPS_H_ */

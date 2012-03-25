@@ -33,4 +33,6 @@ char sd_error(void);
 // Writes a byte array to the card
 void sd_write(int len, sd_byte_arr_t bytes);
 
+unsigned long sd_get_card_size(void);
+
 #endif /* SD_H_ */

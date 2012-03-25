@@ -10,13 +10,16 @@
 #ifndef _MMCLIB_H
 #define _MMCLIB_H
 
+#include "msp430f2618.h"
+#include "hw_conf.h"
+#include "sd_spi.h"
 
 // macro defines
 #define HIGH(a) ((a>>8)&0xFF)               // high byte from word
 #define LOW(a)  (a&0xFF)                    // low byte from word
 
 #define DUMMY 0xff
-
+#define SECTOR_SIZE (512ul)
 
 // Tokens (necessary  because at NPO/IDLE (and CS active) only 0xff is on the data/command line)
 #define MMC_START_DATA_BLOCK_TOKEN          0xfe   // Data token start byte, Start Single Block Read
@@ -91,11 +94,11 @@ char mmcSetBlockLength (const unsigned long);
 
 // read a size Byte big block beginning at the address.
 char mmcReadBlock(const unsigned long address, const unsigned long count, unsigned char *pBuffer);
-#define mmcReadSector(sector, pBuffer) mmcReadBlock(sector*512ul, 512, pBuffer)
+#define mmcReadSector(sector, pBuffer) mmcReadBlock(sector*SECTOR_SIZE, SECTOR_SIZE, pBuffer)
 
 // write a 512 Byte big block beginning at the (aligned) address
 char mmcWriteBlock (const unsigned long address, const unsigned long count, unsigned char *pBuffer);
-#define mmcWriteSector(sector, pBuffer) mmcWriteBlock(sector*512ul, 512, pBuffer)
+#define mmcWriteSector(sector, pBuffer) mmcWriteBlock(sector*SECTOR_SIZE, SECTOR_SIZE, pBuffer)
 
 // Read Register arg1 with Length arg2 (into the buffer)
 char mmcReadRegister(const char, const unsigned char, unsigned char *pBuffer);
