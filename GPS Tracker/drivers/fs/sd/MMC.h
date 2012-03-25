@@ -12,7 +12,7 @@
 
 #include "msp430f2618.h"
 #include "hw_conf.h"
-#include "sd_spi.h"
+#include "sd/sd_spi.h"
 
 // macro defines
 #define HIGH(a) ((a>>8)&0xFF)               // high byte from word

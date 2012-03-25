@@ -17,12 +17,12 @@
 #define NUM_SETUP_STRS 6
 
 const char gpsInitStrs[NUM_SETUP_STRS][SETUP_STR_LEN + 1] = { // +1 is for the NULL at the end
-    "$PUBX,40,RMC,0,0,0,0,0,0*47\r\n",
+    "$PUBX,40,RMC,0,5,0,0,0,0*42\r\n",
     "$PUBX,40,VTG,0,0,0,0,0,0*5E\r\n",
     "$PUBX,40,GGA,0,0,0,0,0,0*5A\r\n",
     "$PUBX,40,GSA,0,0,0,0,0,0*4E\r\n",
     "$PUBX,40,GSV,0,0,0,0,0,0*59\r\n",
-    "$PUBX,40,GLL,0,5,0,0,0,0*59\r\n",
+    "$PUBX,40,GLL,0,0,0,0,0,0*5C\r\n",
 };
 
 void gps_init(void)
@@ -51,32 +51,199 @@ void gps_init(void)
 
 }
 
-char IsGPSFix(char* line)
+// utils for parse_line
+char parse_time ( char *, TimeType*   );
+char parse_coord( char *, CoordType*  );
+char parse_date ( char *, DateType*   );
+
+#define is_digit(c) (((c)<='9')&&((c)>='0'))
+
+// definitions and constants
+#define GPS_LINE_HEADER_LEN 6
+const char * gps_line_header = "$GPRMC";
+
+StatusType parse_line(char* line, GPSDataType* data)
 {
-  char* nextcomma = line;
-  int commacounter = 0;
+  int i;
+  StatusType read_status;
+  
+  // init value
+  data->status = GPS_INVALID;
+  
+  // header
+  for ( i = 0; i < GPS_LINE_HEADER_LEN; i++ )
+    if ( *(line++) != gps_line_header[i] )
+      return GPS_INVALID;
+  
+  // time
+  if ( ! parse_time( line, &(data->time) ) )
+      return GPS_INVALID;
+  // skip to after the next ','
+  while ( (*line != '\0') && (*(line++) != ',') );
+  if ( *line == '\0' ) 
+    return GPS_INVALID;
+  
+  // status
+  if ( *(line++) == 'A' )
+    read_status = GPS_VALID;
+  else
+    return GPS_INVALID;
+  // skip to after the next ','
+  if ( *(line++) != ',' )
+    return GPS_INVALID;
+  
+  // latitude
+  if ( ! parse_coord(line, &(data->latitude) ) )
+    return GPS_INVALID;
+  // skip to after the next ','
+  while ( (*line != '\0') && (*(line++) != ',') );
+  if ( *line == '\0' ) 
+    return GPS_INVALID;
+  if ( *(line++) != 'N' )
+    return GPS_INVALID;
+  // skip to after the next ','
+  if ( *(line++) != ',' )
+    return GPS_INVALID;
+  
+  // longitude
+  if ( ! parse_coord(line, &(data->longitude) ) )
+    return GPS_INVALID;
+  // skip to after the next ','
+  while ( (*line != '\0') && (*(line++) != ',') );
+  if ( *line == '\0' ) 
+    return GPS_INVALID;
+  if ( *(line++) != 'E' )
+    return GPS_INVALID;
+  // skip to after the next ','
+  if ( *(line++) != ',' )
+    return GPS_INVALID;
 
-  // Parse GLL Message
-  while ((*nextcomma != 0) && (*nextcomma != '\n'))
+  // skip to after the next two ',' (ignore speed and course)
+  for ( i = 0; i < 2; i++ )
   {
-    if (*nextcomma == ',')
-      commacounter++;
-    
-    // check for 7th GLL field
-    if (commacounter == 6)
-    {
-      if (nextcomma[1] == 'A') // We found GPS fix marker
-      {
-        return 1;
-      }
-      else
-      {
-        return 0;
-      }
-    }
-      
-    nextcomma++;
+    while ( (*line != '\0') && (*(line++) != ',') );
+    if ( *line == '\0' ) 
+      return GPS_INVALID;
   }
+  
+  // date
+  if ( ! parse_date( line, &(data->date) ) )
+    return GPS_INVALID;
+  
+  
+  // possible: check checksum and/or use 'mode'
+  
+  
+  // final value
+  data->status = read_status;
+  return read_status;
+}
 
-  return 0;
+char parse_time( char *str, TimeType* time )
+{
+  time->hour = (*(str++) - '0')*10;
+  if ( time->hour > 20 ) 
+    return 0;
+  time->hour += (*(str++) - '0');
+  if ( time->hour > 23 ) 
+    return 0;
+  
+  time->minutes = (*(str++) - '0')*10;
+  if ( time->minutes > 50 ) 
+    return 0;
+  time->minutes += (*(str++) - '0');
+  if ( time->minutes > 59 ) 
+    return 0;
+  
+  time->seconds = (*(str++) - '0')*10;
+  if ( time->seconds > 50 ) 
+    return 0;
+  time->seconds += (*(str++) - '0');
+  if ( time->seconds > 59 ) 
+    return 0;
+
+  return 1;
+}
+
+char parse_coord( char *str, CoordType* coord )
+{
+  // coordinates are in format ddmm.mmmm or dddmm.mmmm
+  
+  char* p_dot = str+2;
+  double minutes = 0;
+  double minute_frac = 0, minute_den = 1.0;
+  *coord = 0;
+  
+  // parse full degrees ( str is on "dd" or "ddd" )
+  while ( ( *p_dot     != '\0' ) && 
+          ( *str       != '\0' ) &&
+          ( *(p_dot++) !=  '.' )    )
+  {
+    char c = *(str++);
+    if ( ! is_digit(c) )
+      return 0;
+    *coord *= 10.0;
+    *coord += (c - '0');
+  }
+  if ( ( *p_dot == '\0' ) || ( *str == '\0' ) )
+    return 0;
+  
+  // parse full minutes ( str is on "mm" )
+  while ( ( *str != '\0' ) && ( str < p_dot ) )
+  {
+    char c = *(str++);
+    if ( ! is_digit(c) )
+      return 0;
+    minutes *= 10;
+    minutes += (c - '0');
+  }
+  if ( *str == '\0' )
+    return 0;
+  
+  // skip dot
+  str++;
+  
+  // parse minute fracture ( str is on "mmmm" )
+  while ( ( *str != '\0' ) && ( *str != ',' ) )
+  {
+    char c = *(str++);
+    if ( ! is_digit(c) )
+      return 0;
+    minute_frac += (c - '0');
+    minute_den *= 10.0;
+  }
+  if ( *str == '\0' )
+    return 0;
+
+  minutes += (minute_frac / minute_den);
+  *coord += (minutes / 60.0);
+  
+  return 1;  
+}
+
+char parse_date ( char *str, DateType *date )
+{
+  date->day = (*(str++) - '0')*10;
+  if ( date->day > 30 ) 
+    return 0;
+  date->day += (*(str++) - '0');
+  if ( date->day > 31 ) 
+    return 0;
+
+  date->month = (*(str++) - '0')*10;
+  if ( date->month > 10 ) 
+    return 0;
+  date->month += (*(str++) - '0');
+  if ( date->month > 12 ) 
+    return 0;
+
+  date->year = (*(str++) - '0')*10;
+  if ( date->year > 90 ) 
+    return 0;
+  date->year += (*(str++) - '0');
+  if ( date->year > 99 ) 
+    return 0;
+  date->year += 2000;
+  
+  return 1;
 }

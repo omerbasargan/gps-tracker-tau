@@ -1,5 +1,5 @@
 [DebugChecksum]
-Checksum=-1372169114
+Checksum=-133231352
 [DisAssemblyWindow]
 NumStates=_ 1
 State 1=_ 1
@@ -43,7 +43,7 @@ Control Register=0
 NextState0=0
 NextState1=0
 [Action Register]
-Break=17
+Break=1
 State Storage=0
 [Log file]
 LoggingEnabled=_ 0
@@ -56,7 +56,7 @@ LogFile=_ ""
 Enabled=0
 [DriverProfiling]
 Enabled=0
-Mode=161696240
+Mode=0
 Graph=0
 Symbiont=0
 [Breakpoints]
@@ -65,8 +65,7 @@ Bp1=_ "STD_CODE" "{$PROJ_DIR$\drivers\sd\mmc.c}.295.7@1" 0 0 0 0 "" 0 ""
 Bp2=_ "STD_CODE" "{$PROJ_DIR$\drivers\sd\mmc.c}.300.5@1" 0 0 0 0 "" 0 ""
 Bp3=_ "STD_CODE" "{$PROJ_DIR$\drivers\sd\mmc.c}.126.3@1" 0 0 0 0 "" 0 ""
 Bp4=_ "STD_CODE" "{$PROJ_DIR$\drivers\fs\diskio.c}.40.3@1" 0 0 0 0 "" 0 ""
-Bp5=_ "STD_CODE" "{$PROJ_DIR$\drivers\gps.c}.70.9@1" 1 0 0 0 "" 0 ""
-Count=6
+Count=5
 [FET]
 Clock mode=14
 Extended Clock mode=-1
