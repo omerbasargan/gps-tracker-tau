@@ -40,8 +40,8 @@
 #define SD_CS_DIR P3DIR
 #define SD_CS_OUT P3OUT
 #define SD_CS_BIT BIT0
-#define sd_set_cs() SD_CS_OUT &= ~SD_CS_BIT
-#define sd_clr_cs() SD_CS_OUT |= SD_CS_BIT
+#define sd_cs_low() SD_CS_OUT &= ~SD_CS_BIT
+#define sd_cs_high() SD_CS_OUT |= SD_CS_BIT
 #define sd_init_cs() SD_CS_DIR |= SD_CS_BIT
 //    IFG macros
  #define sd_spi_rx_buf  UCB0RXBUF

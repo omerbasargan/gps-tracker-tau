@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<project>
+  <fileVersion>2</fileVersion>
+  <fileChecksum>4192169291</fileChecksum>
+  <configuration>
+    <name>Debug</name>
+    <outputs>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\xencoding_limits.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\ymath.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Product.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Threads.h</file>
+      <file>$PROJ_DIR$\drivers\gps.c</file>
+      <file>$PROJ_DIR$\drivers\fs\ff.c</file>
+      <file>$PROJ_DIR$\drivers\fs\diskio.c</file>
+      <file>$PROJ_DIR$\main.c</file>
+      <file>$PROJ_DIR$\drivers\sd\mmc.c</file>
+      <file>$PROJ_DIR$\drivers\uart.c</file>
+      <file>$PROJ_DIR$\drivers\timer.c</file>
+      <file>$PROJ_DIR$\drivers\sd\sd_spi.c</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\math.h</file>
+      <file>$PROJ_DIR$\drivers\sd\sd.c</file>
+      <file>$TOOLKIT_DIR$\lib\dlib\dl430xsfn.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\xtgmath.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\yvals.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\diskio.r43</file>
+      <file>$PROJ_DIR$\drivers\fs\src\diskio.c</file>
+      <file>$PROJ_DIR$\drivers\fs\src\diskio.h</file>
+      <file>$PROJ_DIR$\drivers\fs\src\integer.h</file>
+      <file>$PROJ_DIR$\drivers\fs\src\ffconf.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\diskio.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\sd.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\ff.r43</file>
+      <file>$PROJ_DIR$\Debug\Obj\gps.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Defaults.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\ff.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\timer.r43</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\ycheck.h</file>
+      <file>$PROJ_DIR$\drivers\fs\diskio.h</file>
+      <file>$PROJ_DIR$\drivers\fs\src\ff.c</file>
+      <file>$PROJ_DIR$\drivers\fs\ffconf.h</file>
+      <file>$PROJ_DIR$\drivers\fs\src\ff.h</file>
+      <file>$PROJ_DIR$\drivers\sd\sd_spi.h</file>
+      <file>$PROJ_DIR$\drivers\timer.h</file>
+      <file>$PROJ_DIR$\drivers\sd\sd.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\gps.r43</file>
+      <file>$TOOLKIT_DIR$\config\multiplier.xcl</file>
+      <file>$PROJ_DIR$\Debug\Obj\uart.r43</file>
+      <file>$PROJ_DIR$\Debug\Obj\sd.r43</file>
+      <file>$TOOLKIT_DIR$\inc\msp430.h</file>
+      <file>$PROJ_DIR$\drivers\sd\MMC.h</file>
+      <file>$TOOLKIT_DIR$\config\lnk430F2618.xcl</file>
+      <file>$PROJ_DIR$\hw_conf.h</file>
+      <file>$TOOLKIT_DIR$\lib\dlib\dl430xsfn.r43</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.r43</file>
+      <file>$TOOLKIT_DIR$\inc\in430.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\sd_spi.r43</file>
+      <file>$TOOLKIT_DIR$\inc\msp430f2618.h</file>
+      <file>$PROJ_DIR$\Debug\Exe\GPS.d43</file>
+      <file>$PROJ_DIR$\Debug\Obj\sd_spi.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\GPS.pbd</file>
+      <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
+      <file>$PROJ_DIR$\drivers\gps.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\mmc.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
+      <file>$PROJ_DIR$\drivers\uart.h</file>
+      <file>$PROJ_DIR$\drivers\fs\integer.h</file>
+      <file>$PROJ_DIR$\drivers\fs\ff.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\mmc.r43</file>
+      <file>$PROJ_DIR$\Debug\Obj\timer.pbi</file>
+      <file>$PROJ_DIR$\Debug\List\GPS.map</file>
+      <file>$PROJ_DIR$\Debug\Obj\uart.pbi</file>
+    </outputs>
+    <file>
+      <name>$PROJ_DIR$\drivers\gps.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 25</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 37</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 49 47 53 44 54 57 35</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 49 47 53 44 54 57 35</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\drivers\fs\ff.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 27</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 24</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 59 58 32 30</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 59 58 32 30</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\drivers\fs\diskio.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 22</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 17</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 49 47 53 30 58 42 44 34</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 49 47 53 30 58 42 44 34</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\main.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 56</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 46</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 41 49 47 53 44 35 57 54 59 58 32</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 41 49 47 53 44 35 57 54 59 58 32</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\drivers\sd\mmc.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 55</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 60</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 42 49 47 53 44 34 12 29 1 16 26 2 0 3 15</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 42 49 47 53 44 34 12 29 1 16 26 14 2 0 3 15</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\drivers\uart.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 63</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 39</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 49 47 53 44 57</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 49 47 53 44 57</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\drivers\timer.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 61</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 28</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\drivers\sd\sd_spi.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 51</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 48</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 49 47 53 44</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 49 47 53 44</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\drivers\sd\sd.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 23</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 40</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 49 47 53 44 36 11 8 42 12 29 1 16 26 2 0 3 15</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 49 47 53 44 36 11 8 42 12 29 1 16 26 14 2 0 3 15</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 50 62</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\drivers\fs\src\diskio.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 22</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 19 20</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 19 20 42</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\drivers\fs\src\ff.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 27</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 24</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 33 20 21 19</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 33 20 21 19</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Exe\GPS.d43</name>
+      <outputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 62</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 43 38 17 24 37 46 60 48 28 39 45</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Obj\GPS.pbd</name>
+      <inputs>
+        <tool>
+          <name>BILINK</name>
+          <file> 22 27 25 56 55 51 61 63</file>
+        </tool>
+      </inputs>
+    </file>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\drivers\fs\src\diskio.c</name>
+      <tool>ICC430</tool>
+    </forcedrebuild>
+  </configuration>
+  <configuration>
+    <name>Release</name>
+    <outputs/>
+    <forcedrebuild>
+      <name>[MULTI_TOOL]</name>
+      <tool>XLINK</tool>
+    </forcedrebuild>
+  </configuration>
+</project>
+
+

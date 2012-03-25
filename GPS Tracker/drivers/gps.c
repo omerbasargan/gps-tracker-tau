@@ -50,3 +50,33 @@ void gps_init(void)
   while ( uart_read(1, (char*)i)  ); // clear read buffer
 
 }
+
+char IsGPSFix(char* line)
+{
+  char* nextcomma = line;
+  int commacounter = 0;
+
+  // Parse GLL Message
+  while ((*nextcomma != 0) && (*nextcomma != '\n'))
+  {
+    if (*nextcomma == ',')
+      commacounter++;
+    
+    // check for 7th GLL field
+    if (commacounter == 6)
+    {
+      if (nextcomma[1] == 'A') // We found GPS fix marker
+      {
+        return 1;
+      }
+      else
+      {
+        return 0;
+      }
+    }
+      
+    nextcomma++;
+  }
+
+  return 0;
+}

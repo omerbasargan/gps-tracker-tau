@@ -4,6 +4,9 @@
  *  This is a standard spi implementation used by the sd driver
  */
 
+#include "msp430f2618.h"
+#include "hw_conf.h"
+
 void sd_spi_init(void)
 {
   //
@@ -13,7 +16,7 @@ void sd_spi_init(void)
   // hold USCI in reset
   UCB0CTL1 |= UCSWRST;
 
-  UCB0CTL0 = UCMST | UCMSB | UCSYNC ; // 3 Pin SPI, Master mode, MSB 1st
+  UCB0CTL0 = UCMST | UCMSB | UCSYNC | UCCKPL ; // 3 Pin SPI, Master mode, MSB 1st
   UCB0CTL1 |= UCSSEL_3; // Clock source is SMCLK (8MHz)
   UCB0BR0 = 20; // Bit Rate = 8 MHz / 20 = 400 KHz
   UCB0BR1 = 0;
@@ -32,7 +35,7 @@ void sd_spi_init(void)
 //  IE2 |= (UCB0TXIE|UCB0RXIE); // enable interrupts
 }
 
-void sd_spi_write(sd_byte_arr_t bytes, unsigned int len)
+void sd_spi_write(unsigned char * bytes, unsigned int len)
 {
   unsigned int i = 0;
   for (i = 0; i < len; i++){
@@ -51,7 +54,7 @@ unsigned char sd_spi_write_byte(unsigned char byte)
   return (sd_spi_rx_buf);
 }
 
-void sd_spi_read(sd_byte_arr_t buffer, unsigned int len)
+void sd_spi_read(unsigned char * buffer, unsigned int len)
 {
   unsigned int i = 0;
   char dummy = 0xFF;
