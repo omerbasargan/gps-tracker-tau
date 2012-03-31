@@ -51,4 +51,16 @@
  #define sd_spi_rx_ready() (IFG2&UCB0RXIFG)
  #define sd_spi_rx_FG_clr() IFG2 &= ~UCB0RXIFG
 
+
+// Record switch
+#define BUTTON_BIT BIT4
+#define BUTTON_IN P1IN
+#define BUTTON_REN P1REN
+#define BUTTON_OUT P1OUT
+#define BUTTON_IE  P1IE
+#define BUTTON_IES P1IES
+#define BUTTON_IFG P1IFG
+#define is_record_on() ((BUTTON_IN & BUTTON_BIT) == 0)
+
+
 #endif /* HW_CONF_H_ */

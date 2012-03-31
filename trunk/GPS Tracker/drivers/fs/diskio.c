@@ -141,13 +141,30 @@ DRESULT disk_ioctl (
 /* User Provided Timer Function for FatFs module           */
 /*---------------------------------------------------------*/
 
+static DWORD   fat_year = 2012;
+static DWORD   fat_month = 1;
+static DWORD   fat_day = 1;
+static DWORD   fat_hour = 0;
+static DWORD   fat_minutes = 0;
+static DWORD   fat_seconds = 0;
+
+
 DWORD get_fattime (void)
 {
-	return	  ((DWORD)(2012 - 1980) << 25)	/* Year = 2012 */
-			| ((DWORD)1 << 21)				/* Month = 1 */
-			| ((DWORD)1 << 16)				/* Day_m = 1*/
-			| ((DWORD)0 << 11)				/* Hour = 0 */
-			| ((DWORD)0 << 5)				/* Min = 0 */
-			| ((DWORD)0 >> 1);				/* Sec = 0 */
+	return	  ((DWORD)(fat_year - 1980) << 25)	/* Year = 2012 */
+			| ((DWORD)fat_month << 21)				/* Month = 1 */
+			| ((DWORD)fat_day << 16)				/* Day_m = 1*/
+			| ((DWORD)fat_hour << 11)				/* Hour = 0 */
+			| ((DWORD)fat_minutes << 5)				/* Min = 0 */
+			| ((DWORD)fat_seconds >> 1);				/* Sec = 0 */
 }
 
+void update_fattime(int year, int month, int day, int hour, int minutes, int seconds)
+{
+  fat_year = year;
+  fat_month = month;
+  fat_day = day;
+  fat_hour = hour;
+  fat_minutes = minutes;
+  fat_seconds = seconds;
+}

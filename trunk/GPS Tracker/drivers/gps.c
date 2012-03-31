@@ -59,13 +59,15 @@ char parse_date ( char *, DateType*   );
 #define is_digit(c) (((c)<='9')&&((c)>='0'))
 
 // definitions and constants
-#define GPS_LINE_HEADER_LEN 6
-const char * gps_line_header = "$GPRMC";
+#define GPS_LINE_HEADER_LEN 7
+const char * gps_line_header = "$GPRMC,";
 
 StatusType parse_line(char* line, GPSDataType* data)
 {
   int i;
   StatusType read_status;
+  
+//  line = "$GPRMC,083559.00,A,4717.11437,N,00833.91522,E,0.004,77.52,091202,,,A*57";
   
   // init value
   data->status = GPS_INVALID;
@@ -189,11 +191,9 @@ char parse_coord( char *str, CoordType* coord )
     return 0;
   
   // parse full minutes ( str is on "mm" )
-  while ( ( *str != '\0' ) && ( str < p_dot ) )
+  while ( is_digit(*str) && ( str < p_dot ) )
   {
     char c = *(str++);
-    if ( ! is_digit(c) )
-      return 0;
     minutes *= 10;
     minutes += (c - '0');
   }
@@ -209,6 +209,7 @@ char parse_coord( char *str, CoordType* coord )
     char c = *(str++);
     if ( ! is_digit(c) )
       return 0;
+    minute_frac *= 10.0;
     minute_frac += (c - '0');
     minute_den *= 10.0;
   }

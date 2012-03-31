@@ -7,79 +7,66 @@
     <name>Debug</name>
     <outputs>
       <file>$TOOLKIT_DIR$\inc\dlib\c\ysizet.h</file>
-      <file>$PROJ_DIR$\drivers\fs\sd\sd_spi.h</file>
-      <file>$PROJ_DIR$\drivers\fs\sd\MMC.h</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\ymath.h</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\math.h</file>
-      <file>$PROJ_DIR$\drivers\sd\sd.c</file>
       <file>$TOOLKIT_DIR$\inc\dlib\c\xencoding_limits.h</file>
+      <file>$PROJ_DIR$\drivers\fs\sd\sd_spi.h</file>
       <file>$PROJ_DIR$\drivers\gps.c</file>
       <file>$PROJ_DIR$\drivers\fs\ff.c</file>
       <file>$PROJ_DIR$\drivers\fs\diskio.c</file>
       <file>$PROJ_DIR$\main.c</file>
       <file>$PROJ_DIR$\drivers\timer.c</file>
+      <file>$PROJ_DIR$\drivers\fs\sd\sd_spi.c</file>
+      <file>$PROJ_DIR$\drivers\fs\sd\mmc.c</file>
       <file>$PROJ_DIR$\drivers\uart.c</file>
-      <file>$PROJ_DIR$\drivers\sd\mmc.c</file>
-      <file>$PROJ_DIR$\drivers\sd\sd_spi.c</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\xtgmath.h</file>
+      <file>$PROJ_DIR$\drivers\fs\sd\MMC.h</file>
       <file>$TOOLKIT_DIR$\lib\dlib\dl430xsfn.h</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Threads.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\ymath.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\math.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\xtgmath.h</file>
       <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Product.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Threads.h</file>
       <file>$TOOLKIT_DIR$\inc\dlib\c\yvals.h</file>
       <file>$PROJ_DIR$\Debug\Obj\main.r43</file>
       <file>$TOOLKIT_DIR$\inc\in430.h</file>
       <file>$TOOLKIT_DIR$\inc\msp430f2618.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\sd_spi.r43</file>
       <file>$PROJ_DIR$\Debug\Obj\sd_spi.pbi</file>
       <file>$PROJ_DIR$\Debug\Exe\GPS.d43</file>
+      <file>$PROJ_DIR$\Debug\Obj\sd_spi.r43</file>
       <file>$PROJ_DIR$\Debug\Obj\GPS.pbd</file>
       <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
       <file>$PROJ_DIR$\drivers\uart.h</file>
       <file>$PROJ_DIR$\drivers\gps.h</file>
       <file>$PROJ_DIR$\drivers\fs\integer.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\mmc.pbi</file>
-      <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
       <file>$PROJ_DIR$\drivers\fs\ff.h</file>
       <file>$PROJ_DIR$\Debug\Obj\mmc.r43</file>
       <file>$PROJ_DIR$\Debug\List\GPS.map</file>
+      <file>$PROJ_DIR$\Debug\Obj\diskio.r43</file>
+      <file>$PROJ_DIR$\Debug\Obj\mmc.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\ff.r43</file>
       <file>$PROJ_DIR$\Debug\Obj\timer.pbi</file>
       <file>$PROJ_DIR$\Debug\Obj\uart.pbi</file>
-      <file>$PROJ_DIR$\Debug\Obj\diskio.r43</file>
-      <file>$PROJ_DIR$\drivers\fs\src\diskio.c</file>
       <file>$TOOLKIT_DIR$\inc\dlib\c\ycheck.h</file>
-      <file>$PROJ_DIR$\drivers\fs\src\diskio.h</file>
-      <file>$PROJ_DIR$\drivers\fs\src\integer.h</file>
-      <file>$PROJ_DIR$\drivers\fs\src\ffconf.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\diskio.pbi</file>
-      <file>$PROJ_DIR$\Debug\Obj\ff.r43</file>
-      <file>$PROJ_DIR$\Debug\Obj\sd.pbi</file>
       <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Defaults.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\gps.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\diskio.pbi</file>
       <file>$TOOLKIT_DIR$\config\multiplier.xcl</file>
+      <file>$PROJ_DIR$\Debug\Obj\uart.r43</file>
+      <file>$PROJ_DIR$\drivers\timer.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\gps.r43</file>
+      <file>$PROJ_DIR$\Debug\Obj\gps.pbi</file>
+      <file>$TOOLKIT_DIR$\config\lnk430F2618.xcl</file>
       <file>$PROJ_DIR$\Debug\Obj\ff.pbi</file>
       <file>$PROJ_DIR$\Debug\Obj\timer.r43</file>
-      <file>$PROJ_DIR$\drivers\timer.h</file>
       <file>$PROJ_DIR$\drivers\fs\diskio.h</file>
-      <file>$PROJ_DIR$\drivers\fs\src\ff.c</file>
       <file>$PROJ_DIR$\drivers\fs\ffconf.h</file>
-      <file>$PROJ_DIR$\drivers\fs\src\ff.h</file>
-      <file>$PROJ_DIR$\drivers\sd\sd_spi.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\gps.r43</file>
-      <file>$PROJ_DIR$\drivers\sd\sd.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\sd.r43</file>
-      <file>$PROJ_DIR$\Debug\Obj\uart.r43</file>
       <file>$TOOLKIT_DIR$\inc\msp430.h</file>
-      <file>$TOOLKIT_DIR$\config\lnk430F2618.xcl</file>
-      <file>$TOOLKIT_DIR$\lib\dlib\dl430xsfn.r43</file>
-      <file>$PROJ_DIR$\drivers\sd\MMC.h</file>
-      <file>$PROJ_DIR$\hw_conf.h</file>
       <file>$TOOLKIT_DIR$\inc\dlib\c\stdio.h</file>
+      <file>$PROJ_DIR$\hw_conf.h</file>
+      <file>$TOOLKIT_DIR$\lib\dlib\dl430xsfn.r43</file>
       <file>$TOOLKIT_DIR$\inc\dlib\c\ystdio.h</file>
-      <file>$PROJ_DIR$\drivers\fs\sd\sd_spi.c</file>
-      <file>$PROJ_DIR$\drivers\fs\sd\mmc.c</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\string.h</file>
     </outputs>
     <file>
-      <name>$PROJ_DIR$\drivers\sd\sd.c</name>
+      <name>$PROJ_DIR$\drivers\gps.c</name>
       <outputs>
         <tool>
           <name>BICOMP</name>
@@ -87,40 +74,17 @@
         </tool>
         <tool>
           <name>ICC430</name>
-          <file> 60</file>
+          <file> 45</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 22 21 27 66 59 14 13 65 4 40 3 19 47 18 6 17 15</file>
+          <file> 21 20 26 54 28 27 44</file>
         </tool>
         <tool>
           <name>ICC430</name>
-          <file> 22 21 27 66 59 14 13 65 4 40 3 19 47 16 18 6 17 15</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\drivers\gps.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 48</file>
-        </tool>
-        <tool>
-          <name>ICC430</name>
-          <file> 58</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 22 21 27 66 29 28 52</file>
-        </tool>
-        <tool>
-          <name>ICC430</name>
-          <file> 22 21 27 66 29 28 52</file>
+          <file> 21 20 26 54 28 27 44</file>
         </tool>
       </inputs>
     </file>
@@ -129,21 +93,21 @@
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 50</file>
+          <file> 48</file>
         </tool>
         <tool>
           <name>ICC430</name>
-          <file> 45</file>
+          <file> 36</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 33 30 55 53</file>
+          <file> 30 29 51 50</file>
         </tool>
         <tool>
           <name>ICC430</name>
-          <file> 33 30 55 53</file>
+          <file> 30 29 51 50</file>
         </tool>
       </inputs>
     </file>
@@ -152,21 +116,21 @@
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 44</file>
+          <file> 41</file>
         </tool>
         <tool>
           <name>ICC430</name>
-          <file> 38</file>
+          <file> 33</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 22 21 27 53 30 2 66 1</file>
+          <file> 21 20 26 50 29 11 54 2</file>
         </tool>
         <tool>
           <name>ICC430</name>
-          <file> 22 21 27 53 30 2 66 1</file>
+          <file> 21 20 26 50 29 11 54 2</file>
         </tool>
       </inputs>
     </file>
@@ -175,21 +139,21 @@
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 32</file>
+          <file> 35</file>
         </tool>
         <tool>
           <name>ICC430</name>
-          <file> 20</file>
+          <file> 19</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 62 22 21 27 67 40 19 47 18 6 17 0 68 66 52 28 29 33 30 55</file>
+          <file> 52 21 20 26 57 39 18 40 16 1 17 0 53 56 54 44 27 28 30 29 51</file>
         </tool>
         <tool>
           <name>ICC430</name>
-          <file> 62 22 21 27 67 40 19 47 16 18 6 17 0 68 66 52 28 29 33 30 55</file>
+          <file> 52 21 20 26 57 39 18 40 12 16 1 17 0 53 56 54 44 27 28 30 29 51</file>
         </tool>
       </inputs>
     </file>
@@ -198,166 +162,34 @@
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 36</file>
-        </tool>
-        <tool>
-          <name>ICC430</name>
-          <file> 51</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\drivers\uart.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
           <file> 37</file>
         </tool>
         <tool>
           <name>ICC430</name>
-          <file> 61</file>
+          <file> 49</file>
         </tool>
       </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 22 21 27 66 28</file>
-        </tool>
-        <tool>
-          <name>ICC430</name>
-          <file> 22 21 27 66 28</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\drivers\sd\mmc.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 31</file>
-        </tool>
-        <tool>
-          <name>ICC430</name>
-          <file> 34</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC430</name>
-          <file> 65 22 21 27 66 57 4 40 3 19 47 16 18 6 17 15</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\drivers\sd\sd_spi.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 24</file>
-        </tool>
-        <tool>
-          <name>ICC430</name>
-          <file> 23</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>ICC430</name>
-          <file> 22 21 27 66</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>[ROOT_NODE]</name>
-      <outputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 25 35</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\Debug\Exe\GPS.d43</name>
-      <outputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 35</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 63 49 38 45 58 20 34 23 51 61 64</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\Debug\Obj\GPS.pbd</name>
-      <inputs>
-        <tool>
-          <name>BILINK</name>
-          <file> 44 50 48 32 31 24 36 37</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\drivers\fs\src\diskio.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 44</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 41 42</file>
-        </tool>
-        <tool>
-          <name>ICC430</name>
-          <file> 41 42 65</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\drivers\fs\src\ff.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 50</file>
-        </tool>
-        <tool>
-          <name>ICC430</name>
-          <file> 45</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 56 42 43 41</file>
-        </tool>
-        <tool>
-          <name>ICC430</name>
-          <file> 56 42 43 41</file>
-        </tool>
-      </inputs>
     </file>
     <file>
       <name>$PROJ_DIR$\drivers\fs\sd\sd_spi.c</name>
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 24</file>
+          <file> 22</file>
         </tool>
         <tool>
           <name>ICC430</name>
-          <file> 23</file>
+          <file> 24</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
+          <name>BICOMP</name>
+          <file> 21 20 26 54</file>
+        </tool>
+        <tool>
           <name>ICC430</name>
-          <file> 22 21 27 66</file>
+          <file> 21 20 26 54</file>
         </tool>
       </inputs>
     </file>
@@ -366,24 +198,80 @@
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 31</file>
+          <file> 34</file>
         </tool>
         <tool>
           <name>ICC430</name>
-          <file> 34</file>
+          <file> 31</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
+          <name>BICOMP</name>
+          <file> 11 21 20 26 54 2 14 39 13 18 40 16 1 17 15</file>
+        </tool>
+        <tool>
           <name>ICC430</name>
-          <file> 2 22 21 27 66 1 4 40 3 19 47 16 18 6 17 15</file>
+          <file> 11 21 20 26 54 2 14 39 13 18 40 12 16 1 17 15</file>
         </tool>
       </inputs>
     </file>
-    <forcedrebuild>
-      <name>$PROJ_DIR$\drivers\fs\src\diskio.c</name>
-      <tool>ICC430</tool>
-    </forcedrebuild>
+    <file>
+      <name>$PROJ_DIR$\drivers\uart.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 38</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 43</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 21 20 26 54 27</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 21 20 26 54 27</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 23 32</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Exe\GPS.d43</name>
+      <outputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 32</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 47 42 33 36 45 19 31 24 49 43 55</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Obj\GPS.pbd</name>
+      <inputs>
+        <tool>
+          <name>BILINK</name>
+          <file> 41 48 46 35 34 22 37 38</file>
+        </tool>
+      </inputs>
+    </file>
   </configuration>
   <configuration>
     <name>Release</name>
