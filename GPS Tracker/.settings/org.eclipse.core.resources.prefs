@@ -1,9 +1,19 @@
-#Fri Dec 30 18:19:49 IST 2011
+#Sat Mar 31 15:08:15 IDT 2012
 eclipse.preferences.version=1
+encoding//Debug/drivers/fs/sd/subdir_rules.mk=UTF-8
+encoding//Debug/drivers/fs/sd/subdir_vars.mk=UTF-8
+encoding//Debug/drivers/fs/src/option/subdir_rules.mk=UTF-8
+encoding//Debug/drivers/fs/src/option/subdir_vars.mk=UTF-8
+encoding//Debug/drivers/fs/src/subdir_rules.mk=UTF-8
+encoding//Debug/drivers/fs/src/subdir_vars.mk=UTF-8
+encoding//Debug/drivers/fs/subdir_rules.mk=UTF-8
+encoding//Debug/drivers/fs/subdir_vars.mk=UTF-8
 encoding//Debug/drivers/sd/subdir_rules.mk=UTF-8
 encoding//Debug/drivers/sd/subdir_vars.mk=UTF-8
 encoding//Debug/drivers/subdir_rules.mk=UTF-8
 encoding//Debug/drivers/subdir_vars.mk=UTF-8
+encoding//Debug/drivers/usage_example_IAR/subdir_rules.mk=UTF-8
+encoding//Debug/drivers/usage_example_IAR/subdir_vars.mk=UTF-8
 encoding//Debug/makefile=UTF-8
 encoding//Debug/objects.mk=UTF-8
 encoding//Debug/sources.mk=UTF-8
