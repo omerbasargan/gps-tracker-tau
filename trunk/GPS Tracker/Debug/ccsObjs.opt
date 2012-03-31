@@ -1,0 +1,1 @@
+"./drivers/fs/ff.obj" "./drivers/fs/diskio.obj" "./drivers/fs/sd/sd_spi.obj" "./drivers/fs/sd/mmc.obj" "./drivers/uart.obj" "./drivers/timer.obj" "./drivers/gps.obj" "./main.obj" -l"libc.a" "../lnk_msp430f2618.cmd" 
