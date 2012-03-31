@@ -2,7 +2,7 @@
 #                                                                              #
 #      IAR Universal Linker V5.0.2.5/W32                                       #
 #                                                                              #
-#           Link time     =  25/Mar/2012  18:49:07                             #
+#           Link time     =  31/Mar/2012  14:30:41                             #
 #           Target CPU    =  MSP430                                            #
 #           List file     =  "C:\Users\owner\Code\TAU project\GPS Tracker\Debu #
 #                            g\List\GPS.map"                                   #
@@ -159,38 +159,38 @@ DATA16_AN
            P3DIR                   001A 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6E2C - 6E37 (0xc bytes), align: 1
-  Segment part 9.             Intra module refs:   disk_initialize
+  Relative segment, address: 7224 - 722F (0xc bytes), align: 1
+  Segment part 19.            Intra module refs:   disk_initialize
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           sd_hw_init              6E2C 
+           sd_hw_init              7224 
                calls direct
                CSTACK = 00000000 ( 00000004 )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6CFE - 6D11 (0x14 bytes), align: 1
-  Segment part 10.
+  Relative segment, address: 70F6 - 7109 (0x14 bytes), align: 1
+  Segment part 20.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           disk_initialize         6CFE            chk_mounted (ff)
+           disk_initialize         70F6            chk_mounted (ff)
                calls direct
                CSTACK = 00000000 ( 00000004 )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6E82 - 6E85 (0x4 bytes), align: 1
-  Segment part 8.
+  Relative segment, address: 7272 - 7275 (0x4 bytes), align: 1
+  Segment part 18.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           disk_status             6E82            chk_mounted (ff)
+           disk_status             7272            chk_mounted (ff)
                                                    validate (ff)
                CSTACK = 00000000 ( 00000004 )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 65FA - 664D (0x54 bytes), align: 1
-  Segment part 7.
+  Relative segment, address: 69AA - 69FD (0x54 bytes), align: 1
+  Segment part 17.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           disk_read               65FA            check_fs (ff)
+           disk_read               69AA            check_fs (ff)
                                                    chk_mounted (ff)
                                                    f_write (ff)
                                                    move_window (ff)
@@ -198,11 +198,11 @@ DATA16_AN
                CSTACK = 00000000 ( 00000012 )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 64F4 - 654D (0x5a bytes), align: 1
-  Segment part 6.
+  Relative segment, address: 68A4 - 68FD (0x5a bytes), align: 1
+  Segment part 16.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           disk_write              64F4            f_sync (ff)
+           disk_write              68A4            f_sync (ff)
                                                    f_write (ff)
                                                    move_window (ff)
                                                    sync (ff)
@@ -210,21 +210,89 @@ DATA16_AN
                CSTACK = 00000000 ( 00000012 )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6E8E - 6E91 (0x4 bytes), align: 1
-  Segment part 5.
+  Relative segment, address: 727A - 727D (0x4 bytes), align: 1
+  Segment part 15.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           disk_ioctl              6E8E            sync (ff)
+           disk_ioctl              727A            sync (ff)
                CSTACK = 00000000 ( 00000004 )
     -------------------------------------------------------------------------
+DATA16_I
+  Relative segment, address: 1100 - 1103 (0x4 bytes), align: 1
+  Segment part 4.             Intra module refs:   get_fattime
+                                                   update_fattime
+           LOCAL                   ADDRESS         
+           =====                   =======         
+           fat_year                1100 
+    -------------------------------------------------------------------------
+DATA16_I
+  Relative segment, address: 1104 - 1107 (0x4 bytes), align: 1
+  Segment part 6.             Intra module refs:   get_fattime
+                                                   update_fattime
+           LOCAL                   ADDRESS         
+           =====                   =======         
+           fat_month               1104 
+    -------------------------------------------------------------------------
+DATA16_I
+  Relative segment, address: 1108 - 110B (0x4 bytes), align: 1
+  Segment part 8.             Intra module refs:   get_fattime
+                                                   update_fattime
+           LOCAL                   ADDRESS         
+           =====                   =======         
+           fat_day                 1108 
+    -------------------------------------------------------------------------
+DATA16_Z
+  Relative segment, address: 1114 - 1117 (0x4 bytes), align: 1
+  Segment part 10.            Intra module refs:   get_fattime
+                                                   update_fattime
+           LOCAL                   ADDRESS         
+           =====                   =======         
+           fat_hour                1114 
+    -------------------------------------------------------------------------
+DATA16_Z
+  Relative segment, address: 1118 - 111B (0x4 bytes), align: 1
+  Segment part 11.            Intra module refs:   get_fattime
+                                                   update_fattime
+           LOCAL                   ADDRESS         
+           =====                   =======         
+           fat_minutes             1118 
+    -------------------------------------------------------------------------
+DATA16_Z
+  Relative segment, address: 111C - 111F (0x4 bytes), align: 1
+  Segment part 12.            Intra module refs:   get_fattime
+                                                   update_fattime
+           LOCAL                   ADDRESS         
+           =====                   =======         
+           fat_seconds             111C 
+    -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6E64 - 6E6B (0x8 bytes), align: 1
-  Segment part 4.
+  Relative segment, address: 6542 - 65BD (0x7c bytes), align: 1
+  Segment part 14.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           get_fattime             6E64            f_open (ff)
+           get_fattime             6542            f_open (ff)
                                                    f_sync (ff)
-               CSTACK = 00000000 ( 00000004 )
+               CSTACK = 00000000 ( 00000014 )
+    -------------------------------------------------------------------------
+<CODE> 1 (was CODE)
+  Relative segment, address: 66B6 - 672B (0x76 bytes), align: 1
+  Segment part 13.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           update_fattime          66B6            main (main)
+               CSTACK = 00000000 ( 00000008 )
+    -------------------------------------------------------------------------
+DATA16_ID
+  Relative segment, address: 34F2 - 34F5 (0x4 bytes), align: 1
+  Segment part 5.             Intra module refs:   fat_year
+    -------------------------------------------------------------------------
+DATA16_ID
+  Relative segment, address: 34F6 - 34F9 (0x4 bytes), align: 1
+  Segment part 7.             Intra module refs:   fat_month
+    -------------------------------------------------------------------------
+DATA16_ID
+  Relative segment, address: 34FA - 34FD (0x4 bytes), align: 1
+  Segment part 9.             Intra module refs:   fat_day
 
     *************************************************************************
 
@@ -234,58 +302,58 @@ DATA16_AN
   SEGMENTS IN THE MODULE
   ======================
 DATA16_Z
-  Relative segment, address: 1104 - 1105 (0x2 bytes), align: 1
+  Relative segment, address: 1120 - 1121 (0x2 bytes), align: 1
   Segment part 6.             Intra module refs:   chk_mounted
                                                    f_mount
            LOCAL                   ADDRESS         
            =====                   =======         
-           FatFs                   1104 
+           FatFs                   1120 
     -------------------------------------------------------------------------
 DATA16_Z
-  Relative segment, address: 1106 - 1107 (0x2 bytes), align: 1
+  Relative segment, address: 1122 - 1123 (0x2 bytes), align: 1
   Segment part 7.             Intra module refs:   chk_mounted
            LOCAL                   ADDRESS         
            =====                   =======         
-           Fsid                    1106 
+           Fsid                    1122 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6CA6 - 6CBB (0x16 bytes), align: 1
+  Relative segment, address: 70E0 - 70F5 (0x16 bytes), align: 1
   Segment part 11.            Intra module refs:   dir_register
                                                    f_write
            LOCAL                   ADDRESS         
            =====                   =======         
-           mem_cpy                 6CA6 
+           mem_cpy                 70E0 
                CSTACK = 00000000 ( 00000004 )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6D26 - 6D39 (0x14 bytes), align: 1
+  Relative segment, address: 711E - 7131 (0x14 bytes), align: 1
   Segment part 12.            Intra module refs:   create_name
                                                    dir_next
                                                    dir_register
                                                    sync
            LOCAL                   ADDRESS         
            =====                   =======         
-           mem_set                 6D26 
+           mem_set                 711E 
                CSTACK = 00000000 ( 00000004 )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6B6A - 6B8F (0x26 bytes), align: 1
+  Relative segment, address: 6F1A - 6F3F (0x26 bytes), align: 1
   Segment part 24.            Intra module refs:   dir_find
            LOCAL                   ADDRESS         
            =====                   =======         
-           mem_cmp                 6B6A 
+           mem_cmp                 6F1A 
                CSTACK = 00000000 ( 00000006 )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6C4A - 6C61 (0x18 bytes), align: 1
+  Relative segment, address: 6FFC - 7013 (0x18 bytes), align: 1
   Segment part 26.            Intra module refs:   create_name
            LOCAL                   ADDRESS         
            =====                   =======         
-           chk_chr                 6C4A 
+           chk_chr                 6FFC 
                CSTACK = 00000000 ( 00000004 )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 5CF6 - 5DAD (0xb8 bytes), align: 1
+  Relative segment, address: 5FB4 - 606B (0xb8 bytes), align: 1
   Segment part 14.            Intra module refs:   dir_find
                                                    dir_next
                                                    dir_register
@@ -296,207 +364,207 @@ DATA16_Z
                                                    sync
            LOCAL                   ADDRESS         
            =====                   =======         
-           move_window             5CF6 
+           move_window             5FB4 
                calls direct
                CSTACK = 00000000 ( 00000012 )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 5A24 - 5B1B (0xf8 bytes), align: 1
+  Relative segment, address: 5DCE - 5EC5 (0xf8 bytes), align: 1
   Segment part 15.            Intra module refs:   f_sync
            LOCAL                   ADDRESS         
            =====                   =======         
-           sync                    5A24 
+           sync                    5DCE 
                calls direct
                CSTACK = 00000000 ( 0000000A )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 681C - 685F (0x44 bytes), align: 1
+  Relative segment, address: 6BCC - 6C0F (0x44 bytes), align: 1
   Segment part 16.            Intra module refs:   dir_next
                                                    dir_sdi
                                                    f_write
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           clust2sect              681C 
+           clust2sect              6BCC 
                CSTACK = 00000000 ( 00000006 )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 4D44 - 4ED3 (0x190 bytes), align: 1
+  Relative segment, address: 527E - 540D (0x190 bytes), align: 1
   Segment part 17.            Intra module refs:   create_chain
                                                    dir_next
                                                    dir_sdi
                                                    remove_chain
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           get_fat                 4D44 
+           get_fat                 527E 
                calls direct
                CSTACK = 00000000 ( 00000010 )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 483E - 49FF (0x1c2 bytes), align: 1
+  Relative segment, address: 4A20 - 4BE1 (0x1c2 bytes), align: 1
   Segment part 20.            Intra module refs:   create_chain
                                                    remove_chain
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           put_fat                 483E 
+           put_fat                 4A20 
                calls direct
                CSTACK = 00000000 ( 00000014 )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 5FBA - 6055 (0x9c bytes), align: 1
+  Relative segment, address: 6278 - 6313 (0x9c bytes), align: 1
   Segment part 34.            Intra module refs:   f_open
            LOCAL                   ADDRESS         
            =====                   =======         
-           remove_chain            5FBA 
+           remove_chain            6278 
                calls direct
                CSTACK = 00000000 ( 00000014 )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 56E0 - 5803 (0x124 bytes), align: 1
+  Relative segment, address: 5A8A - 5BAD (0x124 bytes), align: 1
   Segment part 21.            Intra module refs:   dir_next
                                                    f_write
            LOCAL                   ADDRESS         
            =====                   =======         
-           create_chain            56E0 
+           create_chain            5A8A 
                calls direct
                CSTACK = 00000000 ( 00000018 )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 591E - 5A23 (0x106 bytes), align: 1
+  Relative segment, address: 5CC8 - 5DCD (0x106 bytes), align: 1
   Segment part 18.            Intra module refs:   dir_find
                                                    dir_register
                                                    follow_path
            LOCAL                   ADDRESS         
            =====                   =======         
-           dir_sdi                 591E 
+           dir_sdi                 5CC8 
                calls direct
                CSTACK = 00000000 ( 0000000C )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 4ED4 - 5063 (0x190 bytes), align: 1
+  Relative segment, address: 50EE - 527D (0x190 bytes), align: 1
   Segment part 22.            Intra module refs:   dir_find
                                                    dir_register
            LOCAL                   ADDRESS         
            =====                   =======         
-           dir_next                4ED4 
+           dir_next                50EE 
                calls direct
                CSTACK = 00000000 ( 00000010 )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 637C - 63DD (0x62 bytes), align: 1
+  Relative segment, address: 672C - 678D (0x62 bytes), align: 1
   Segment part 25.            Intra module refs:   follow_path
            LOCAL                   ADDRESS         
            =====                   =======         
-           dir_find                637C 
+           dir_find                672C 
                calls direct
                CSTACK = 00000000 ( 00000008 )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6180 - 6205 (0x86 bytes), align: 1
+  Relative segment, address: 643E - 64C3 (0x86 bytes), align: 1
   Segment part 23.            Intra module refs:   f_open
            LOCAL                   ADDRESS         
            =====                   =======         
-           dir_register            6180 
+           dir_register            643E 
                calls direct
                CSTACK = 00000000 ( 0000000C )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 5804 - 591D (0x11a bytes), align: 1
+  Relative segment, address: 5BAE - 5CC7 (0x11a bytes), align: 1
   Segment part 27.            Intra module refs:   follow_path
            LOCAL                   ADDRESS         
            =====                   =======         
-           create_name             5804 
+           create_name             5BAE 
                calls direct
                CSTACK = 00000000 ( 00000014 )
     -------------------------------------------------------------------------
 DATA16_C
-  Relative segment, address: 31A8 - 31B6 (0xf bytes), align: 0
+  Relative segment, address: 31B6 - 31C4 (0xf bytes), align: 0
   Segment part 2.             Intra module refs:   create_name
     -------------------------------------------------------------------------
 DATA16_C
-  Relative segment, address: 31B7 - 3236 (0x80 bytes), align: 0
+  Relative segment, address: 31C5 - 3244 (0x80 bytes), align: 0
   Segment part 8.             Intra module refs:   create_name
            LOCAL                   ADDRESS         
            =====                   =======         
-           create_name::excvt      31B7 
+           create_name::excvt      31C5 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 5DAE - 5E61 (0xb4 bytes), align: 1
+  Relative segment, address: 606C - 611F (0xb4 bytes), align: 1
   Segment part 28.            Intra module refs:   f_open
            LOCAL                   ADDRESS         
            =====                   =======         
-           follow_path             5DAE 
+           follow_path             606C 
                calls direct
                CSTACK = 00000000 ( 00000008 )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6056 - 60ED (0x98 bytes), align: 1
+  Relative segment, address: 6314 - 63AB (0x98 bytes), align: 1
   Segment part 29.            Intra module refs:   chk_mounted
            LOCAL                   ADDRESS         
            =====                   =======         
-           check_fs                6056 
+           check_fs                6314 
                calls direct
                CSTACK = 00000000 ( 00000008 )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 3900 - 3EA3 (0x5a4 bytes), align: 1
+  Relative segment, address: 3AE2 - 4085 (0x5a4 bytes), align: 1
   Segment part 30.            Intra module refs:   f_open
            LOCAL                   ADDRESS         
            =====                   =======         
-           chk_mounted             3900 
+           chk_mounted             3AE2 
                calls direct
                CSTACK = 00000000 ( 00000018 )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6ABC - 6AE7 (0x2c bytes), align: 1
+  Relative segment, address: 6EC4 - 6EEF (0x2c bytes), align: 1
   Segment part 38.            Intra module refs:   f_sync
                                                    f_write
            LOCAL                   ADDRESS         
            =====                   =======         
-           validate                6ABC 
+           validate                6EC4 
                calls direct
                CSTACK = 00000000 ( 00000004 )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6A8E - 6ABB (0x2e bytes), align: 1
+  Relative segment, address: 6E10 - 6E3D (0x2e bytes), align: 1
   Segment part 51.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           f_mount                 6A8E            main (main)
+           f_mount                 6E10            main (main)
                CSTACK = 00000000 ( 00000004 )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 4622 - 483D (0x21c bytes), align: 1
+  Relative segment, address: 4804 - 4A1F (0x21c bytes), align: 1
   Segment part 50.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           f_open                  4622            main (main)
+           f_open                  4804            main (main)
                calls direct
                CSTACK = 00000000 ( 00000038 )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 3EA4 - 4179 (0x2d6 bytes), align: 1
+  Relative segment, address: 4086 - 435B (0x2d6 bytes), align: 1
   Segment part 48.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           f_write                 3EA4            main (main)
+           f_write                 4086            main (main)
                calls direct
                CSTACK = 00000000 ( 00000016 )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 5B1C - 5C09 (0xee bytes), align: 1
+  Relative segment, address: 5EC6 - 5FB3 (0xee bytes), align: 1
   Segment part 46.            Intra module refs:   f_close
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           f_sync                  5B1C 
+           f_sync                  5EC6 
                calls direct
                CSTACK = 00000000 ( 0000000A )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6CD2 - 6CE7 (0x16 bytes), align: 1
+  Relative segment, address: 709E - 70B3 (0x16 bytes), align: 1
   Segment part 47.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           f_close                 6CD2            main (main)
+           f_close                 709E            main (main)
                calls direct
                CSTACK = 00000000 ( 00000006 )
 
@@ -526,68 +594,68 @@ DATA16_AN
            P4DIR                   001E 
     -------------------------------------------------------------------------
 DATA16_C
-  Relative segment, address: 3237 - 323D (0x7 bytes), align: 0
+  Relative segment, address: 3245 - 324C (0x8 bytes), align: 0
   Segment part 4.             Intra module refs:   Segment part 7
     -------------------------------------------------------------------------
 DATA16_C
-  Relative segment, address: 323E - 32F1 (0xb4 bytes), align: 0
+  Relative segment, address: 324D - 3300 (0xb4 bytes), align: 0
   Segment part 5.             Intra module refs:   gps_init
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           gpsInitStrs             323E 
+           gpsInitStrs             324D 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6300 - 637B (0x7c bytes), align: 1
+  Relative segment, address: 65BE - 6639 (0x7c bytes), align: 1
   Segment part 12.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           gps_init                6300            main (main)
+           gps_init                65BE            main (main)
                calls direct
                CSTACK = 00000000 ( 00000006 )
     -------------------------------------------------------------------------
 DATA16_I
-  Relative segment, address: 1100 - 1101 (0x2 bytes), align: 1
+  Relative segment, address: 110C - 110D (0x2 bytes), align: 1
   Segment part 6.             Intra module refs:   parse_line
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           gps_line_header         1100 
+           gps_line_header         110C 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 5064 - 51D7 (0x174 bytes), align: 1
+  Relative segment, address: 540E - 5581 (0x174 bytes), align: 1
   Segment part 11.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           parse_line              5064            main (main)
+           parse_line              540E            main (main)
                calls direct
                CSTACK = 00000000 ( 0000000C )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 5F14 - 5FB9 (0xa6 bytes), align: 1
+  Relative segment, address: 61D2 - 6277 (0xa6 bytes), align: 1
   Segment part 10.            Intra module refs:   parse_line
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           parse_time              5F14 
+           parse_time              61D2 
                CSTACK = 00000000 ( 00000004 )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 4A00 - 4BA5 (0x1a6 bytes), align: 1
+  Relative segment, address: 4DA0 - 4F4F (0x1b0 bytes), align: 1
   Segment part 9.             Intra module refs:   parse_line
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           parse_coord             4A00 
+           parse_coord             4DA0 
                calls direct
                CSTACK = 00000000 ( 00000018 )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 5E62 - 5F13 (0xb2 bytes), align: 1
+  Relative segment, address: 6120 - 61D1 (0xb2 bytes), align: 1
   Segment part 8.             Intra module refs:   parse_line
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           parse_date              5E62 
+           parse_date              6120 
                CSTACK = 00000000 ( 00000004 )
     -------------------------------------------------------------------------
 DATA16_ID
-  Relative segment, address: 3320 - 3321 (0x2 bytes), align: 1
+  Relative segment, address: 34FE - 34FF (0x2 bytes), align: 1
   Segment part 7.             Intra module refs:   gps_line_header
 
     *************************************************************************
@@ -626,98 +694,195 @@ DATA16_AN
            BCSCTL3                 0053 
     -------------------------------------------------------------------------
 DATA16_AN
+  Relative segment, address: 0020 - 0020 (0x1 bytes), align: 0
+  Segment part 5. ROOT.       Intra module refs:   main
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           P1IN                    0020 
+    -------------------------------------------------------------------------
+DATA16_AN
+  Relative segment, address: 0021 - 0021 (0x1 bytes), align: 0
+  Segment part 6. ROOT.       Intra module refs:   record_button_init
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           P1OUT                   0021 
+    -------------------------------------------------------------------------
+DATA16_AN
+  Relative segment, address: 0023 - 0023 (0x1 bytes), align: 0
+  Segment part 7. ROOT.       Intra module refs:   ButtonISR
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           P1IFG                   0023 
+    -------------------------------------------------------------------------
+DATA16_AN
+  Relative segment, address: 0024 - 0024 (0x1 bytes), align: 0
+  Segment part 8. ROOT.       Intra module refs:   record_button_init
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           P1IES                   0024 
+    -------------------------------------------------------------------------
+DATA16_AN
+  Relative segment, address: 0025 - 0025 (0x1 bytes), align: 0
+  Segment part 9. ROOT.       Intra module refs:   record_button_init
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           P1IE                    0025 
+    -------------------------------------------------------------------------
+DATA16_AN
+  Relative segment, address: 0027 - 0027 (0x1 bytes), align: 0
+  Segment part 10. ROOT.      Intra module refs:   record_button_init
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           P1REN                   0027 
+    -------------------------------------------------------------------------
+DATA16_AN
   Relative segment, address: 0120 - 0121 (0x2 bytes), align: 0
-  Segment part 7. ROOT.       Intra module refs:   main
+  Segment part 13. ROOT.      Intra module refs:   main
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            WDTCTL                  0120 
     -------------------------------------------------------------------------
 DATA16_Z
-  Relative segment, address: 155E - 15DD (0x80 bytes), align: 0
-  Segment part 11.            Intra module refs:   main
+  Relative segment, address: 157A - 15F9 (0x80 bytes), align: 0
+  Segment part 20.            Intra module refs:   main
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           line                    155E 
+           line                    157A 
     -------------------------------------------------------------------------
-DATA16_C
-  Relative segment, address: 32F2 - 32F9 (0x8 bytes), align: 0
-  Segment part 9.             Intra module refs:   main
-    -------------------------------------------------------------------------
-DATA16_C
-  Relative segment, address: 32FA - 3306 (0xd bytes), align: 0
-  Segment part 10.            Intra module refs:   spool_coords
-    -------------------------------------------------------------------------
-DATA16_Z
-  Relative segment, address: 1108 - 1327 (0x220 bytes), align: 1
-  Segment part 15.            Intra module refs:   main
+DATA16_I
+  Relative segment, address: 110E - 110F (0x2 bytes), align: 1
+  Segment part 21.            Intra module refs:   main
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           Fil                     1108 
+           KML_Header              110E 
     -------------------------------------------------------------------------
-DATA16_Z
-  Relative segment, address: 1328 - 1555 (0x22e bytes), align: 1
-  Segment part 17.            Intra module refs:   main
-           ENTRY                   ADDRESS         REF BY
-           =====                   =======         ======
-           Fatfs                   1328 
-    -------------------------------------------------------------------------
-DATA16_Z
-  Relative segment, address: 15DE - 15DE (0x1 bytes), align: 0
-  Segment part 18.            Intra module refs:   main
-           ENTRY                   ADDRESS         REF BY
-           =====                   =======         ======
-           result                  15DE 
-    -------------------------------------------------------------------------
-<CODE> 1 (was CODE)
-  Relative segment, address: 5C0A - 5CF5 (0xec bytes), align: 1
-  Segment part 24.
-           ENTRY                   ADDRESS         REF BY
-           =====                   =======         ======
-           main                    5C0A            Segment part 19 (?cstart)
-               calls direct
-               CSTACK = 00000000 ( 00000026 )
-    -------------------------------------------------------------------------
-<CODE> 1 (was CODE)
-  Relative segment, address: 6C62 - 6C79 (0x18 bytes), align: 1
+DATA16_I
+  Relative segment, address: 1110 - 1111 (0x2 bytes), align: 1
   Segment part 23.            Intra module refs:   main
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           hw_setup                6C62 
+           KML_Footer              1110 
+    -------------------------------------------------------------------------
+DATA16_Z
+  Relative segment, address: 1124 - 1343 (0x220 bytes), align: 1
+  Segment part 26.            Intra module refs:   main
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Fil                     1124 
+    -------------------------------------------------------------------------
+DATA16_Z
+  Relative segment, address: 1344 - 1571 (0x22e bytes), align: 1
+  Segment part 28.            Intra module refs:   main
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           Fatfs                   1344 
+    -------------------------------------------------------------------------
+DATA16_Z
+  Relative segment, address: 15FA - 15FA (0x1 bytes), align: 0
+  Segment part 29.            Intra module refs:   main
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           result                  15FA 
+    -------------------------------------------------------------------------
+<CODE> 1 (was CODE)
+  Relative segment, address: 4BE2 - 4D9F (0x1be bytes), align: 1
+  Segment part 37.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           main                    4BE2            Segment part 19 (?cstart)
+               calls direct
+               CSTACK = 00000000 ( 0000002C )
+    -------------------------------------------------------------------------
+<CODE> 1 (was CODE)
+  Relative segment, address: 7014 - 702B (0x18 bytes), align: 1
+  Segment part 36.            Intra module refs:   main
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           hw_setup                7014 
                calls direct
                CSTACK = 00000000 ( 00000004 )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6E5A - 6E63 (0xa bytes), align: 1
-  Segment part 22.            Intra module refs:   hw_setup
+  Relative segment, address: 7252 - 725B (0xa bytes), align: 1
+  Segment part 35.            Intra module refs:   hw_setup
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           led_setup               6E5A 
+           led_setup               7252 
                CSTACK = 00000000 ( 00000004 )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 69CE - 69FF (0x32 bytes), align: 1
-  Segment part 21.            Intra module refs:   hw_setup
+  Relative segment, address: 6D7E - 6DAF (0x32 bytes), align: 1
+  Segment part 34.            Intra module refs:   hw_setup
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           clocks_setup            69CE 
+           clocks_setup            6D7E 
                CSTACK = 00000000 ( 00000004 )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6E94 - 6E95 (0x2 bytes), align: 1
-  Segment part 20.            Intra module refs:   hw_setup
+  Relative segment, address: 7282 - 7283 (0x2 bytes), align: 1
+  Segment part 33.            Intra module refs:   hw_setup
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           timers_setup            6E94 
+           timers_setup            7282 
                CSTACK = 00000000 ( 00000004 )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6C32 - 6C49 (0x18 bytes), align: 1
-  Segment part 19.            Intra module refs:   main
+  Relative segment, address: 7044 - 705B (0x18 bytes), align: 1
+  Segment part 32.            Intra module refs:   main
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           spool_coords            6C32 
+           spool_coords            7044 
                calls direct
                CSTACK = 00000000 ( 0000000C )
+    -------------------------------------------------------------------------
+<CODE> 1 (was CODE)
+  Relative segment, address: 6FE2 - 6FFB (0x1a bytes), align: 1
+  Segment part 31.            Intra module refs:   main
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           record_button_init      6FE2 
+               CSTACK = 00000000 ( 00000004 )
+    -------------------------------------------------------------------------
+ISR_CODE
+  Relative segment, address: 3128 - 3135 (0xe bytes), align: 1
+  Segment part 30.            Intra module refs:   ButtonISR::??INTVEC 36
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ButtonISR               3128 
+               interrupt function
+               CSTACK = 00000000 ( 00000004 )
+    -------------------------------------------------------------------------
+INTVEC
+  Common segment, address: FFC0 - FFE5 (0x26 bytes), align: 1
+  Segment part 14. ROOT.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ButtonISR::??INTVEC 36
+                                   FFE4 
+    -------------------------------------------------------------------------
+DATA16_ID
+  Relative segment, address: 3500 - 3501 (0x2 bytes), align: 1
+  Segment part 22.            Intra module refs:   KML_Header
+    -------------------------------------------------------------------------
+DATA16_ID
+  Relative segment, address: 3502 - 3503 (0x2 bytes), align: 1
+  Segment part 24.            Intra module refs:   KML_Footer
+    -------------------------------------------------------------------------
+DATA16_C
+  Relative segment, address: 3301 - 3477 (0x177 bytes), align: 0
+  Segment part 16.            Intra module refs:   Segment part 22
+    -------------------------------------------------------------------------
+DATA16_C
+  Relative segment, address: 3478 - 34B0 (0x39 bytes), align: 0
+  Segment part 17.            Intra module refs:   Segment part 24
+    -------------------------------------------------------------------------
+DATA16_C
+  Relative segment, address: 34B1 - 34C5 (0x15 bytes), align: 0
+  Segment part 18.            Intra module refs:   main
+    -------------------------------------------------------------------------
+DATA16_C
+  Relative segment, address: 34C6 - 34D8 (0x13 bytes), align: 0
+  Segment part 19.            Intra module refs:   spool_coords
 
     *************************************************************************
 
@@ -727,7 +892,7 @@ DATA16_Z
   SEGMENTS IN THE MODULE
   ======================
 DATA16_I
-  Relative segment, address: 1102 - 1102 (0x1 bytes), align: 0
+  Relative segment, address: 1112 - 1112 (0x1 bytes), align: 0
   Segment part 4.             Intra module refs:   mmcCheckBusy
                                                    mmcGetResponse
                                                    mmcGetXXResponse
@@ -738,98 +903,98 @@ DATA16_I
                                                    mmcWriteBlock
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           DUMMY_CHAR              1102 
+           DUMMY_CHAR              1112 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6B90 - 6BB1 (0x22 bytes), align: 1
+  Relative segment, address: 6F40 - 6F61 (0x22 bytes), align: 1
   Segment part 12.            Intra module refs:   mmcSetBlockLength
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           mmcInit                 6B90            disk_initialize (diskio)
+           mmcInit                 6F40            disk_initialize (diskio)
                calls direct
                CSTACK = 00000000 ( 00000006 )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 643C - 6499 (0x5e bytes), align: 1
+  Relative segment, address: 67EC - 6849 (0x5e bytes), align: 1
   Segment part 11.            Intra module refs:   mmcInit
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           mmcGoIdle               643C 
+           mmcGoIdle               67EC 
                calls direct
                CSTACK = 00000000 ( 00000006 )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6BB2 - 6BD3 (0x22 bytes), align: 1
+  Relative segment, address: 6F84 - 6FA5 (0x22 bytes), align: 1
   Segment part 7.             Intra module refs:   mmcGoIdle
                                                    mmcReadBlock
                                                    mmcSetBlockLength
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           mmcGetResponse          6BB2 
+           mmcGetResponse          6F84 
                calls direct
                CSTACK = 00000000 ( 00000006 )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6BF6 - 6C15 (0x20 bytes), align: 1
+  Relative segment, address: 6FA6 - 6FC5 (0x20 bytes), align: 1
   Segment part 9.             Intra module refs:   mmcReadBlock
                                                    mmcWriteBlock
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           mmcGetXXResponse        6BF6 
+           mmcGetXXResponse        6FA6 
                calls direct
                CSTACK = 00000000 ( 00000008 )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 654E - 65A5 (0x58 bytes), align: 1
+  Relative segment, address: 68FE - 6955 (0x58 bytes), align: 1
   Segment part 15.            Intra module refs:   mmcWriteBlock
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           mmcCheckBusy            654E 
+           mmcCheckBusy            68FE 
                calls direct
                CSTACK = 00000000 ( 00000006 )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6284 - 62FF (0x7c bytes), align: 1
+  Relative segment, address: 663A - 66B5 (0x7c bytes), align: 1
   Segment part 17.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           mmcReadBlock            6284            disk_read (diskio)
+           mmcReadBlock            663A            disk_read (diskio)
                calls direct
                CSTACK = 00000000 ( 00000010 )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6206 - 6283 (0x7e bytes), align: 1
+  Relative segment, address: 64C4 - 6541 (0x7e bytes), align: 1
   Segment part 16.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           mmcWriteBlock           6206            disk_write (diskio)
+           mmcWriteBlock           64C4            disk_write (diskio)
                calls direct
                CSTACK = 00000000 ( 00000010 )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 66F0 - 673B (0x4c bytes), align: 1
+  Relative segment, address: 6AEC - 6B37 (0x4c bytes), align: 1
   Segment part 10.            Intra module refs:   mmcGoIdle
                                                    mmcReadBlock
                                                    mmcSetBlockLength
                                                    mmcWriteBlock
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           mmcSendCmd              66F0 
+           mmcSendCmd              6AEC 
                calls direct
                CSTACK = 00000000 ( 00000012 )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 67D4 - 681B (0x48 bytes), align: 1
+  Relative segment, address: 6B84 - 6BCB (0x48 bytes), align: 1
   Segment part 13.            Intra module refs:   mmcReadBlock
                                                    mmcWriteBlock
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           mmcSetBlockLength       67D4 
+           mmcSetBlockLength       6B84 
                calls direct
                CSTACK = 00000000 ( 00000008 )
     -------------------------------------------------------------------------
 DATA16_ID
-  Relative segment, address: 3322 - 3322 (0x1 bytes), align: 0
+  Relative segment, address: 3504 - 3504 (0x1 bytes), align: 0
   Segment part 5.             Intra module refs:   DUMMY_CHAR
 
     *************************************************************************
@@ -903,28 +1068,28 @@ DATA16_AN
            UCB0TXBUF               006F 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6A00 - 6A2F (0x30 bytes), align: 1
+  Relative segment, address: 6DE0 - 6E0F (0x30 bytes), align: 1
   Segment part 14.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           sd_spi_init             6A00            sd_hw_init (diskio)
+           sd_spi_init             6DE0            sd_hw_init (diskio)
                CSTACK = 00000000 ( 00000004 )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6B14 - 6B3F (0x2c bytes), align: 1
+  Relative segment, address: 6E98 - 6EC3 (0x2c bytes), align: 1
   Segment part 13.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           sd_spi_write            6B14            mmcSendCmd (mmc)
+           sd_spi_write            6E98            mmcSendCmd (mmc)
                                                    mmcWriteBlock (mmc)
                CSTACK = 00000000 ( 00000004 )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6C7A - 6C8F (0x16 bytes), align: 1
+  Relative segment, address: 7088 - 709D (0x16 bytes), align: 1
   Segment part 12.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           sd_spi_write_byte       6C7A            mmcCheckBusy (mmc)
+           sd_spi_write_byte       7088            mmcCheckBusy (mmc)
                                                    mmcGetResponse (mmc)
                                                    mmcGetXXResponse (mmc)
                                                    mmcGoIdle (mmc)
@@ -935,11 +1100,11 @@ DATA16_AN
                CSTACK = 00000000 ( 00000004 )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6A60 - 6A8D (0x2e bytes), align: 1
+  Relative segment, address: 6E3E - 6E6B (0x2e bytes), align: 1
   Segment part 11.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           sd_spi_read             6A60            mmcReadBlock (mmc)
+           sd_spi_read             6E3E            mmcReadBlock (mmc)
                CSTACK = 00000000 ( 00000006 )
 
     *************************************************************************
@@ -950,11 +1115,11 @@ DATA16_AN
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 6924 - 6961 (0x3e bytes), align: 1
+  Relative segment, address: 6CD4 - 6D11 (0x3e bytes), align: 1
   Segment part 2.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           wait                    6924            gps_init (gps)
+           wait                    6CD4            gps_init (gps)
                CSTACK = 00000000 ( 0000000A )
 
     *************************************************************************
@@ -1036,144 +1201,144 @@ DATA16_AN
            UCA1TXBUF               00D7 
     -------------------------------------------------------------------------
 DATA16_Z
-  Relative segment, address: 15DF - 165E (0x80 bytes), align: 0
+  Relative segment, address: 15FB - 167A (0x80 bytes), align: 0
   Segment part 16.            Intra module refs:   uartTxISR
                                                    uart_send
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           uartTxBuf               15DF 
+           uartTxBuf               15FB 
     -------------------------------------------------------------------------
 DATA16_Z
-  Relative segment, address: 165F - 175E (0x100 bytes), align: 0
+  Relative segment, address: 167B - 177A (0x100 bytes), align: 0
   Segment part 17.            Intra module refs:   uartRxISR
                                                    uart_read
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           uartRxBuf               165F 
+           uartRxBuf               167B 
     -------------------------------------------------------------------------
 DATA16_Z
-  Relative segment, address: 1556 - 1557 (0x2 bytes), align: 1
+  Relative segment, address: 1572 - 1573 (0x2 bytes), align: 1
   Segment part 18.            Intra module refs:   uartRxISR
                                                    uart_init
                                                    uart_read
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           uartRxNextIn            1556 
+           uartRxNextIn            1572 
     -------------------------------------------------------------------------
 DATA16_Z
-  Relative segment, address: 1558 - 1559 (0x2 bytes), align: 1
+  Relative segment, address: 1574 - 1575 (0x2 bytes), align: 1
   Segment part 19.            Intra module refs:   uartRxISR
                                                    uart_init
                                                    uart_read
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           uartRxNextOut           1558 
+           uartRxNextOut           1574 
     -------------------------------------------------------------------------
 DATA16_Z
-  Relative segment, address: 175F - 175F (0x1 bytes), align: 0
+  Relative segment, address: 177B - 177B (0x1 bytes), align: 0
   Segment part 20.            Intra module refs:   uartRxISR
                                                    uart_init
                                                    uart_read
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           bUartRxValid            175F 
+           bUartRxValid            177B 
     -------------------------------------------------------------------------
 DATA16_Z
-  Relative segment, address: 155A - 155B (0x2 bytes), align: 1
+  Relative segment, address: 1576 - 1577 (0x2 bytes), align: 1
   Segment part 21.            Intra module refs:   uartTxISR
                                                    uart_init
                                                    uart_send
                                                    uart_send_available
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           uartTxNextIn            155A 
+           uartTxNextIn            1576 
     -------------------------------------------------------------------------
 DATA16_Z
-  Relative segment, address: 155C - 155D (0x2 bytes), align: 1
+  Relative segment, address: 1578 - 1579 (0x2 bytes), align: 1
   Segment part 22.            Intra module refs:   uartTxISR
                                                    uart_init
                                                    uart_send
                                                    uart_send_available
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           uartTxNextOut           155C 
+           uartTxNextOut           1578 
     -------------------------------------------------------------------------
 DATA16_Z
-  Relative segment, address: 1760 - 1760 (0x1 bytes), align: 0
+  Relative segment, address: 177C - 177C (0x1 bytes), align: 0
   Segment part 23.            Intra module refs:   uartTxISR
                                                    uart_init
                                                    uart_is_tx_clear
                                                    uart_send
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           bUartTxClear            1760 
+           bUartTxClear            177C 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6E6C - 6E73 (0x8 bytes), align: 1
+  Relative segment, address: 725C - 7263 (0x8 bytes), align: 1
   Segment part 30.            Intra module refs:   uart_init
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           uart_enable             6E6C 
+           uart_enable             725C 
                CSTACK = 00000000 ( 00000004 )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 66A0 - 66EF (0x50 bytes), align: 1
+  Relative segment, address: 6A50 - 6A9F (0x50 bytes), align: 1
   Segment part 31.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           uart_init               66A0            main (main)
+           uart_init               6A50            main (main)
                calls direct
                CSTACK = 00000000 ( 00000004 )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 649A - 64F3 (0x5a bytes), align: 1
+  Relative segment, address: 684A - 68A3 (0x5a bytes), align: 1
   Segment part 29.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           uart_send               649A            gps_init (gps)
+           uart_send               684A            gps_init (gps)
                calls direct
                CSTACK = 00000000 ( 00000004 )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 65A6 - 65F9 (0x54 bytes), align: 1
+  Relative segment, address: 6956 - 69A9 (0x54 bytes), align: 1
   Segment part 28.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           uart_read               65A6            gps_init (gps)
+           uart_read               6956            gps_init (gps)
                                                    main (main)
                CSTACK = 00000000 ( 00000006 )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6DCC - 6DDD (0x12 bytes), align: 1
+  Relative segment, address: 718E - 719F (0x12 bytes), align: 1
   Segment part 27.            Intra module refs:   uart_send
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           uart_send_available     6DCC 
+           uart_send_available     718E 
                CSTACK = 00000000 ( 00000004 )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6E74 - 6E79 (0x6 bytes), align: 1
+  Relative segment, address: 7264 - 7269 (0x6 bytes), align: 1
   Segment part 26.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           uart_is_tx_clear        6E74            gps_init (gps)
+           uart_is_tx_clear        7264            gps_init (gps)
                CSTACK = 00000000 ( 00000004 )
     -------------------------------------------------------------------------
 ISR_CODE
-  Relative segment, address: 3128 - 315B (0x34 bytes), align: 1
+  Relative segment, address: 3136 - 3169 (0x34 bytes), align: 1
   Segment part 25.            Intra module refs:   uartTxISR::??INTVEC 32
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           uartTxISR               3128 
+           uartTxISR               3136 
                interrupt function
                CSTACK = 00000000 ( 00000006 )
     -------------------------------------------------------------------------
 ISR_CODE
-  Relative segment, address: 315C - 31A7 (0x4c bytes), align: 1
+  Relative segment, address: 316A - 31B5 (0x4c bytes), align: 1
   Segment part 24.            Intra module refs:   uartRxISR::??INTVEC 34
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           uartRxISR               315C 
+           uartRxISR               316A 
                interrupt function
                CSTACK = 00000000 ( 0000000A )
     -------------------------------------------------------------------------
@@ -1201,11 +1366,11 @@ INTVEC
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 547E - 55AF (0x132 bytes), align: 1
+  Relative segment, address: 5828 - 5959 (0x132 bytes), align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?Mul32fHw               547E            _LdtobLarge (?xprintflarge)
+           ?Mul32fHw               5828            _LdtobLarge (?xprintflarge)
                                                    parse_coord (gps)
                                                    scale (?xprintflarge)
 
@@ -1215,11 +1380,11 @@ INTVEC
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 6E92 - 6E93 (0x2 bytes), align: 1
+  Relative segment, address: 7284 - 7285 (0x2 bytes), align: 1
   Segment part 2.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           __DebugBreak            6E92            __exit (?__exit)
+           __DebugBreak            7284            __exit (?__exit)
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : ?__exit
@@ -1227,11 +1392,11 @@ INTVEC
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 6CBC - 6CD1 (0x16 bytes), align: 1
+  Relative segment, address: 7072 - 7087 (0x16 bytes), align: 1
   Segment part 2.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           __exit                  6CBC            Segment part 5 (?_exit)
+           __exit                  7072            Segment part 5 (?_exit)
                                                    _exit (?_exit)
                calls direct
 
@@ -1241,14 +1406,14 @@ INTVEC
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 6E7E, align: 1
+  Relative segment, address: 726A, align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           _exit                   6E7E            exit (?exit)
+           _exit                   726A            exit (?exit)
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6E7E - 6E81 (0x4 bytes), align: 1
+  Relative segment, address: 726A - 726D (0x4 bytes), align: 1
   Segment part 5.             Intra module refs:   _exit
 
     -------------------------------------------------------------------------
@@ -1261,15 +1426,15 @@ CSTACK
   Segment part 1.
     -------------------------------------------------------------------------
 DATA16_Z
-  Relative segment, address: 155E, align: 1
+  Relative segment, address: 157A, align: 1
   Segment part 2.
     -------------------------------------------------------------------------
 DATA16_I
-  Relative segment, address: 1102, align: 1
+  Relative segment, address: 1112, align: 1
   Segment part 3.
     -------------------------------------------------------------------------
 DATA16_ID
-  Relative segment, address: 3322, align: 1
+  Relative segment, address: 3504, align: 1
   Segment part 4.
     -------------------------------------------------------------------------
 CSTART
@@ -1292,6 +1457,9 @@ CSTART
                                                    Fsid (ff)
                                                    bUartRxValid (uart)
                                                    bUartTxClear (uart)
+                                                   fat_hour (diskio)
+                                                   fat_minutes (diskio)
+                                                   fat_seconds (diskio)
                                                    line (main)
                                                    result (main)
                                                    uartRxBuf (uart)
@@ -1307,6 +1475,11 @@ CSTART
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
            ?cstart_init_copy       3110            DUMMY_CHAR (mmc)
+                                                   KML_Footer (main)
+                                                   KML_Header (main)
+                                                   fat_day (diskio)
+                                                   fat_month (diskio)
+                                                   fat_year (diskio)
                                                    gps_line_header (gps)
     -------------------------------------------------------------------------
 CSTART
@@ -1335,34 +1508,34 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 533A - 53DD (0xa4 bytes), align: 1
+  Relative segment, address: 56E4 - 5787 (0xa4 bytes), align: 1
   Segment part 5.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           _Div64u                 533A            _LitobLarge (?xprintflarge)
+           _Div64u                 56E4            _LitobLarge (?xprintflarge)
                CSTACK = 00000000 ( 0000001E )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 53DE - 53EB (0xe bytes), align: 1
+  Relative segment, address: 5788 - 5795 (0xe bytes), align: 1
   Segment part 6.             Intra module refs:   _Div64u
                                                    _Mod64u
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 53EC - 53FB (0x10 bytes), align: 1
+  Relative segment, address: 5796 - 57A5 (0x10 bytes), align: 1
   Segment part 7.             Intra module refs:   _Div64u
                                                    _Mod64u
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 53FC - 5415 (0x1a bytes), align: 1
+  Relative segment, address: 57A6 - 57BF (0x1a bytes), align: 1
   Segment part 8.             Intra module refs:   _Div64u
                                                    _Mod64u
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 5416 - 547D (0x68 bytes), align: 1
+  Relative segment, address: 57C0 - 5827 (0x68 bytes), align: 1
   Segment part 2.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           _Mod64u                 5416            _LitobLarge (?xprintflarge)
+           _Mod64u                 57C0            _LitobLarge (?xprintflarge)
                CSTACK = 00000000 ( 00000016 )
 
     -------------------------------------------------------------------------
@@ -1371,11 +1544,11 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 6CE8 - 6CFD (0x16 bytes), align: 1
+  Relative segment, address: 70B4 - 70C9 (0x16 bytes), align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           div                     6CE8            _GenldLarge (?xprintflarge)
+           div                     70B4            _GenldLarge (?xprintflarge)
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : ?exit
@@ -1383,11 +1556,11 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 6E7A - 6E7D (0x4 bytes), align: 1
+  Relative segment, address: 726E - 7271 (0x4 bytes), align: 1
   Segment part 2.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           exit                    6E7A            Segment part 19 (?cstart)
+           exit                    726E            Segment part 19 (?cstart)
                calls direct
                CSTACK = 00000000 ( 00000004 )
 
@@ -1397,12 +1570,12 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 60EE - 617F (0x92 bytes), align: 1
+  Relative segment, address: 63AC - 643D (0x92 bytes), align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           _Cast32sto32f           60EE            parse_coord (gps)
-           _Cast32uto32f           6102            _LdtobLarge (?xprintflarge)
+           _Cast32sto32f           63AC            parse_coord (gps)
+           _Cast32uto32f           63C0            _LdtobLarge (?xprintflarge)
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : _Cast32fto32u
@@ -1410,11 +1583,11 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 6E38 - 6E43 (0xc bytes), align: 1
+  Relative segment, address: 7230 - 723B (0xc bytes), align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           _Cast32fto32u           6E38            _LdtobLarge (?xprintflarge)
+           _Cast32fto32u           7230            _LdtobLarge (?xprintflarge)
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : ?FLT_Extract
@@ -1422,11 +1595,11 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 673C - 6787 (0x4c bytes), align: 1
+  Relative segment, address: 6B38 - 6B83 (0x4c bytes), align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?FLT_Extract            673C            _Cast32fto32u (_Cast32fto32u)
+           ?FLT_Extract            6B38            _Cast32fto32u (_Cast32fto32u)
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : ?FLT_LT
@@ -1434,11 +1607,11 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 664E - 669F (0x52 bytes), align: 1
+  Relative segment, address: 69FE - 6A4F (0x52 bytes), align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?FLT_LT                 664E            _CmpLt32f (_CmpLt32f)
+           ?FLT_LT                 69FE            _CmpLt32f (_CmpLt32f)
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : _CmpLt32f
@@ -1446,11 +1619,11 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 6E50 - 6E59 (0xa bytes), align: 1
+  Relative segment, address: 7248 - 7251 (0xa bytes), align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           _CmpLt32f               6E50            _LdtobLarge (?xprintflarge)
+           _CmpLt32f               7248            _LdtobLarge (?xprintflarge)
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : _Div32f
@@ -1458,11 +1631,11 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 55B0 - 56DF (0x130 bytes), align: 1
+  Relative segment, address: 595A - 5A89 (0x130 bytes), align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           _Div32f                 55B0            _LdtobLarge (?xprintflarge)
+           _Div32f                 595A            _LdtobLarge (?xprintflarge)
                                                    parse_coord (gps)
 
     -------------------------------------------------------------------------
@@ -1471,12 +1644,12 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 51D8 - 5339 (0x162 bytes), align: 1
+  Relative segment, address: 5582 - 56E3 (0x162 bytes), align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           _Add32f                 51DC            parse_coord (gps)
-           _Sub32f                 51D8            _LdtobLarge (?xprintflarge)
+           _Add32f                 5586            parse_coord (gps)
+           _Sub32f                 5582            _LdtobLarge (?xprintflarge)
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : ?DivMod816u
@@ -1484,12 +1657,12 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 6C16 - 6C31 (0x1c bytes), align: 1
+  Relative segment, address: 6FC6 - 6FE1 (0x1c bytes), align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?DivMod8u               6C16 
-           ?DivMod16u              6C1A            Segment part 0 (?DivMod816s)
+           ?DivMod8u               6FC6 
+           ?DivMod16u              6FCA            Segment part 0 (?DivMod816s)
                                                    chk_mounted (ff)
                                                    dir_next (ff)
                                                    dir_sdi (ff)
@@ -1502,12 +1675,12 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 699A - 69CD (0x34 bytes), align: 1
+  Relative segment, address: 6D4A - 6D7D (0x34 bytes), align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?DivMod8s               699A 
-           ?DivMod16s              699E            div (?div)
+           ?DivMod8s               6D4A 
+           ?DivMod16s              6D4E            div (?div)
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : ?DivMod32u
@@ -1515,11 +1688,11 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 6962 - 6999 (0x38 bytes), align: 1
+  Relative segment, address: 6D12 - 6D49 (0x38 bytes), align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?DivMod32u              6962            ?DivMod32s (?DivMod32s)
+           ?DivMod32u              6D12            ?DivMod32s (?DivMod32s)
                                                    Segment part 16 (?xprintflarge)
                                                    chk_mounted (ff)
                                                    f_write (ff)
@@ -1532,11 +1705,70 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 68E4 - 6923 (0x40 bytes), align: 1
+  Relative segment, address: 6C94 - 6CD3 (0x40 bytes), align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?DivMod32s              68E4            _LdtobLarge (?xprintflarge)
+           ?DivMod32s              6C94            _LdtobLarge (?xprintflarge)
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?ShiftLeft32
+
+  SEGMENTS IN THE MODULE
+  ======================
+<CODE> 1 (was CODE)
+  Relative segment, address: 705C - 705F (0x4 bytes), align: 1
+  Segment part 3.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?ShiftLeft32_5          705C            get_fattime (diskio)
+    -------------------------------------------------------------------------
+<CODE> 1 (was CODE)
+  Relative segment, address: 7060 - 7063 (0x4 bytes), align: 1
+  Segment part 4.             Intra module refs:   ?ShiftLeft32_5
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?ShiftLeft32_4          7060 
+    -------------------------------------------------------------------------
+<CODE> 1 (was CODE)
+  Relative segment, address: 7064 - 7071 (0xe bytes), align: 1
+  Segment part 5.             Intra module refs:   ?ShiftLeft32_4
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?ShiftLeft32_3          7064 
+
+    -------------------------------------------------------------------------
+  LIBRARY MODULE, NAME : ?ShiftLeft32_8n
+
+  SEGMENTS IN THE MODULE
+  ======================
+<CODE> 1 (was CODE)
+  Relative segment, address: 702C - 702F (0x4 bytes), align: 1
+  Segment part 3.
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?ShiftLeft32_11         702C            get_fattime (diskio)
+    -------------------------------------------------------------------------
+<CODE> 1 (was CODE)
+  Relative segment, address: 7030 - 7033 (0x4 bytes), align: 1
+  Segment part 4.             Intra module refs:   ?ShiftLeft32_11
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?ShiftLeft32_10         7030 
+    -------------------------------------------------------------------------
+<CODE> 1 (was CODE)
+  Relative segment, address: 7034 - 7037 (0x4 bytes), align: 1
+  Segment part 5.             Intra module refs:   ?ShiftLeft32_10
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?ShiftLeft32_9          7034 
+    -------------------------------------------------------------------------
+<CODE> 1 (was CODE)
+  Relative segment, address: 7038 - 7043 (0xc bytes), align: 1
+  Segment part 6.             Intra module refs:   ?ShiftLeft32_9
+           ENTRY                   ADDRESS         REF BY
+           =====                   =======         ======
+           ?ShiftLeft32_8          7038 
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : ?ShiftRight32u
@@ -1544,54 +1776,54 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 63DE - 641D (0x40 bytes), align: 1
+  Relative segment, address: 678E - 67CD (0x40 bytes), align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?ShiftRight32u          63DE            mmcSendCmd (mmc)
+           ?ShiftRight32u          678E            mmcSendCmd (mmc)
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 641E - 6421 (0x4 bytes), align: 1
+  Relative segment, address: 67CE - 67D1 (0x4 bytes), align: 1
   Segment part 1.             Intra module refs:   ?ShiftRight32u
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?ShiftRight32u_7        641E            get_fat (ff)
+           ?ShiftRight32u_7        67CE            get_fat (ff)
                                                    put_fat (ff)
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6422 - 6425 (0x4 bytes), align: 1
+  Relative segment, address: 67D2 - 67D5 (0x4 bytes), align: 1
   Segment part 2.             Intra module refs:   ?ShiftRight32u_7
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?ShiftRight32u_6        6422 
+           ?ShiftRight32u_6        67D2 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6426 - 6429 (0x4 bytes), align: 1
+  Relative segment, address: 67D6 - 67D9 (0x4 bytes), align: 1
   Segment part 3.             Intra module refs:   ?ShiftRight32u_6
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?ShiftRight32u_5        6426 
+           ?ShiftRight32u_5        67D6 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 642A - 642D (0x4 bytes), align: 1
+  Relative segment, address: 67DA - 67DD (0x4 bytes), align: 1
   Segment part 4.             Intra module refs:   ?ShiftRight32u_5
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?ShiftRight32u_4        642A 
+           ?ShiftRight32u_4        67DA 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 642E - 6431 (0x4 bytes), align: 1
+  Relative segment, address: 67DE - 67E1 (0x4 bytes), align: 1
   Segment part 5.             Intra module refs:   ?ShiftRight32u_4
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?ShiftRight32u_3        642E 
+           ?ShiftRight32u_3        67DE 
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6432 - 643B (0xa bytes), align: 1
+  Relative segment, address: 67E2 - 67EB (0xa bytes), align: 1
   Segment part 6.             Intra module refs:   ?ShiftRight32u_3
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?ShiftRight32u_2        6432 
+           ?ShiftRight32u_2        67E2 
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : ?ShiftRight32u_8n
@@ -1599,19 +1831,19 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 6DEE - 6DF1 (0x4 bytes), align: 1
+  Relative segment, address: 71D6 - 71D9 (0x4 bytes), align: 1
   Segment part 5.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?ShiftRight32u_9        6DEE            chk_mounted (ff)
+           ?ShiftRight32u_9        71D6            chk_mounted (ff)
                                                    f_write (ff)
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6DF2 - 6DFD (0xc bytes), align: 1
+  Relative segment, address: 71DA - 71E5 (0xc bytes), align: 1
   Segment part 6.             Intra module refs:   ?ShiftRight32u_9
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?ShiftRight32u_8        6DF2 
+           ?ShiftRight32u_8        71DA 
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : ?memchr
@@ -1619,11 +1851,11 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 6C90 - 6CA5 (0x16 bytes), align: 1
+  Relative segment, address: 70CA - 70DF (0x16 bytes), align: 1
   Segment part 2.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           __iar_Memchr            6C90            _PrintfLarge (?xprintflarge)
+           __iar_Memchr            70CA            _PrintfLarge (?xprintflarge)
                CSTACK = 00000000 ( 00000004 )
 
     -------------------------------------------------------------------------
@@ -1632,11 +1864,11 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 6D72 - 6D83 (0x12 bytes), align: 1
+  Relative segment, address: 7146 - 7157 (0x12 bytes), align: 1
   Segment part 2.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           memcpy                  6D72            Segment part 13 (?xprintflarge)
+           memcpy                  7146            Segment part 13 (?xprintflarge)
                                                    _GenldLarge (?xprintflarge)
                                                    _LdtobLarge (?xprintflarge)
                                                    __data16_memcpy (?memzero)
@@ -1648,19 +1880,19 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 6D84 - 6D95 (0x12 bytes), align: 1
+  Relative segment, address: 7158 - 7169 (0x12 bytes), align: 1
   Segment part 4.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           __data16_memzero        6D84            ?cstart_init_zero (?cstart)
+           __data16_memzero        7158            ?cstart_init_zero (?cstart)
                CSTACK = 00000000 ( 00000004 )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6E8A - 6E8D (0x4 bytes), align: 1
+  Relative segment, address: 7276 - 7279 (0x4 bytes), align: 1
   Segment part 3.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           __data16_memcpy         6E8A            ?cstart_init_copy (?cstart)
+           __data16_memcpy         7276            ?cstart_init_copy (?cstart)
                calls direct
                CSTACK = 00000000 ( 00000004 )
 
@@ -1670,11 +1902,11 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 6A30 - 6A5F (0x30 bytes), align: 1
+  Relative segment, address: 6DB0 - 6DDF (0x30 bytes), align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?Mul32Hw                6A30            _LdtobLarge (?xprintflarge)
+           ?Mul32Hw                6DB0            _LdtobLarge (?xprintflarge)
                                                    chk_mounted (ff)
                                                    clust2sect (ff)
                                                    disk_read (diskio)
@@ -1688,11 +1920,11 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 6E86 - 6E89 (0x4 bytes), align: 1
+  Relative segment, address: 727E - 7281 (0x4 bytes), align: 1
   Segment part 0.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           ?IndCallR15             6E86            _PutcharLarge (?xprintflarge)
+           ?IndCallR15             727E            _PutcharLarge (?xprintflarge)
 
     -------------------------------------------------------------------------
   LIBRARY MODULE, NAME : ?sprintf
@@ -1700,11 +1932,12 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 68A2 - 68E3 (0x42 bytes), align: 1
+  Relative segment, address: 6C52 - 6C93 (0x42 bytes), align: 1
   Segment part 2.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           sprintf                 68A2            spool_coords (main)
+           sprintf                 6C52            main (main)
+                                                   spool_coords (main)
                calls direct
                CSTACK = 00000000 ( 0000000C )
 
@@ -1714,11 +1947,11 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 6E0E - 6E1D (0x10 bytes), align: 1
+  Relative segment, address: 7206 - 7215 (0x10 bytes), align: 1
   Segment part 2.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           __iar_Strchr            6E0E            _PrintfLarge (?xprintflarge)
+           __iar_Strchr            7206            _PrintfLarge (?xprintflarge)
                CSTACK = 00000000 ( 00000004 )
 
     -------------------------------------------------------------------------
@@ -1727,11 +1960,12 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 6D60 - 6D71 (0x12 bytes), align: 1
+  Relative segment, address: 71C4 - 71D5 (0x12 bytes), align: 1
   Segment part 2.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           strlen                  6D60            _PrintfLarge (?xprintflarge)
+           strlen                  71C4            _PrintfLarge (?xprintflarge)
+                                                   main (main)
                CSTACK = 00000000 ( 00000004 )
 
     -------------------------------------------------------------------------
@@ -1740,11 +1974,11 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 6788 - 67D3 (0x4c bytes), align: 1
+  Relative segment, address: 6AA0 - 6AEB (0x4c bytes), align: 1
   Segment part 2.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           __iar_Dunscale          6788            _LdtobLarge (?xprintflarge)
+           __iar_Dunscale          6AA0            _LdtobLarge (?xprintflarge)
                CSTACK = 00000000 ( 00000004 )
 
     -------------------------------------------------------------------------
@@ -1753,42 +1987,42 @@ RESET
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 3324 - 3399 (0x76 bytes), align: 1
+  Relative segment, address: 3506 - 357B (0x76 bytes), align: 1
   Segment part 23.            Intra module refs:   _PrintfLarge
            LOCAL                   ADDRESS         
            =====                   =======         
-           LoadInt                 3324 
+           LoadInt                 3506 
                CSTACK = 00000000 ( 00000004 )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 339A - 33A3 (0xa bytes), align: 1
+  Relative segment, address: 357C - 3585 (0xa bytes), align: 1
   Segment part 24.            Intra module refs:   LoadInt
                                                    _LdtobLarge
                                                    _PrintfLarge
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 33A4 - 387F (0x4dc bytes), align: 1
+  Relative segment, address: 3586 - 3A61 (0x4dc bytes), align: 1
   Segment part 25.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           _PrintfLarge            33A4            sprintf (?sprintf)
+           _PrintfLarge            3586            sprintf (?sprintf)
                calls direct
                CSTACK = 00000000 ( 00000074 )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 3880 - 3887 (0x8 bytes), align: 1
+  Relative segment, address: 3A62 - 3A69 (0x8 bytes), align: 1
   Segment part 26.            Intra module refs:   _PrintfLarge
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 3888 - 3895 (0xe bytes), align: 1
+  Relative segment, address: 3A6A - 3A77 (0xe bytes), align: 1
   Segment part 27.            Intra module refs:   _PrintfLarge
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 3896 - 389B (0x6 bytes), align: 1
+  Relative segment, address: 3A78 - 3A7D (0x6 bytes), align: 1
   Segment part 28.            Intra module refs:   _PrintfLarge
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 389C - 38A3 (0x8 bytes), align: 1
+  Relative segment, address: 3A7E - 3A85 (0x8 bytes), align: 1
   Segment part 29.            Intra module refs:   Segment part 28
                                                    Segment part 30
                                                    Segment part 31
@@ -1796,158 +2030,158 @@ RESET
                                                    Segment part 33
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 38A4 - 38AF (0xc bytes), align: 1
+  Relative segment, address: 3A86 - 3A91 (0xc bytes), align: 1
   Segment part 30.            Intra module refs:   _PrintfLarge
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 38B0 - 38BB (0xc bytes), align: 1
+  Relative segment, address: 3A92 - 3A9D (0xc bytes), align: 1
   Segment part 31.            Intra module refs:   _PrintfLarge
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 38BC - 38C7 (0xc bytes), align: 1
+  Relative segment, address: 3A9E - 3AA9 (0xc bytes), align: 1
   Segment part 32.            Intra module refs:   _PrintfLarge
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 38C8 - 38D3 (0xc bytes), align: 1
+  Relative segment, address: 3AAA - 3AB5 (0xc bytes), align: 1
   Segment part 33.            Intra module refs:   _PrintfLarge
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 38D4 - 38E1 (0xe bytes), align: 1
+  Relative segment, address: 3AB6 - 3AC3 (0xe bytes), align: 1
   Segment part 34.            Intra module refs:   _PrintfLarge
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 38E2 - 38EF (0xe bytes), align: 1
+  Relative segment, address: 3AC4 - 3AD1 (0xe bytes), align: 1
   Segment part 35.            Intra module refs:   _LitobLarge
                                                    _PrintfLarge
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 38F0 - 38FF (0x10 bytes), align: 1
+  Relative segment, address: 3AD2 - 3AE1 (0x10 bytes), align: 1
   Segment part 36.            Intra module refs:   LoadInt
                                                    _PrintfLarge
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6AE8 - 6B13 (0x2c bytes), align: 1
+  Relative segment, address: 6E6C - 6E97 (0x2c bytes), align: 1
   Segment part 22.            Intra module refs:   Segment part 26
            LOCAL                   ADDRESS         
            =====                   =======         
-           pad                     6AE8 
+           pad                     6E6C 
                calls direct
                CSTACK = 00000000 ( 0000000E )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 4BA6 - 4D43 (0x19e bytes), align: 1
+  Relative segment, address: 4F50 - 50ED (0x19e bytes), align: 1
   Segment part 17.            Intra module refs:   _PrintfLarge
            LOCAL                   ADDRESS         
            =====                   =======         
-           _LitobLarge             4BA6 
+           _LitobLarge             4F50 
                calls direct
                CSTACK = 00000000 ( 0000002A )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6E1E - 6E2B (0xe bytes), align: 1
+  Relative segment, address: 7216 - 7223 (0xe bytes), align: 1
   Segment part 18.            Intra module refs:   _LitobLarge
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6DBA - 6DCB (0x12 bytes), align: 1
+  Relative segment, address: 71B2 - 71C3 (0x12 bytes), align: 1
   Segment part 19.            Intra module refs:   _LitobLarge
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6D3A - 6D4D (0x14 bytes), align: 1
+  Relative segment, address: 7132 - 7145 (0x14 bytes), align: 1
   Segment part 20.            Intra module refs:   _LitobLarge
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6D4E - 6D5F (0x12 bytes), align: 1
+  Relative segment, address: 716A - 717B (0x12 bytes), align: 1
   Segment part 21.            Intra module refs:   _LitobLarge
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6860 - 68A1 (0x42 bytes), align: 1
+  Relative segment, address: 6C10 - 6C51 (0x42 bytes), align: 1
   Segment part 14.            Intra module refs:   _LdtobLarge
            LOCAL                   ADDRESS         
            =====                   =======         
-           scale                   6860 
+           scale                   6C10 
                calls direct
                CSTACK = 00000000 ( 00000010 )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 43D0 - 4621 (0x252 bytes), align: 1
+  Relative segment, address: 45B2 - 4803 (0x252 bytes), align: 1
   Segment part 15.            Intra module refs:   _PrintfLarge
            LOCAL                   ADDRESS         
            =====                   =======         
-           _LdtobLarge             43D0 
+           _LdtobLarge             45B2 
                calls direct
                CSTACK = 00000000 ( 0000004A )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6DA8 - 6DB9 (0x12 bytes), align: 1
+  Relative segment, address: 71A0 - 71B1 (0x12 bytes), align: 1
   Segment part 16.            Intra module refs:   _LdtobLarge
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 417A - 43CF (0x256 bytes), align: 1
+  Relative segment, address: 435C - 45B1 (0x256 bytes), align: 1
   Segment part 10.            Intra module refs:   _LdtobLarge
            LOCAL                   ADDRESS         
            =====                   =======         
-           _GenldLarge             417A 
+           _GenldLarge             435C 
                calls direct
                CSTACK = 00000000 ( 00000020 )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6DFE - 6E0D (0x10 bytes), align: 1
+  Relative segment, address: 71F6 - 7205 (0x10 bytes), align: 1
   Segment part 11.            Intra module refs:   _GenldLarge
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6DDE - 6DED (0x10 bytes), align: 1
+  Relative segment, address: 71E6 - 71F5 (0x10 bytes), align: 1
   Segment part 12.            Intra module refs:   _GenldLarge
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6D12 - 6D25 (0x14 bytes), align: 1
+  Relative segment, address: 710A - 711D (0x14 bytes), align: 1
   Segment part 13.            Intra module refs:   _GenldLarge
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6B40 - 6B69 (0x2a bytes), align: 1
+  Relative segment, address: 6EF0 - 6F19 (0x2a bytes), align: 1
   Segment part 8.             Intra module refs:   _PrintfLarge
                                                    _PutcharsLarge
            LOCAL                   ADDRESS         
            =====                   =======         
-           _PutcharLarge           6B40 
+           _PutcharLarge           6EF0 
                calls indirect
                CSTACK = 00000000 ( 00000006 )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6BD4 - 6BF5 (0x22 bytes), align: 1
+  Relative segment, address: 6F62 - 6F83 (0x22 bytes), align: 1
   Segment part 9.             Intra module refs:   _PrintfLarge
                                                    pad
            LOCAL                   ADDRESS         
            =====                   =======         
-           _PutcharsLarge          6BD4 
+           _PutcharsLarge          6F62 
                calls direct
                CSTACK = 00000000 ( 0000000C )
     -------------------------------------------------------------------------
 <CODE> 1 (was CODE)
-  Relative segment, address: 6D96 - 6DA7 (0x12 bytes), align: 1
+  Relative segment, address: 717C - 718D (0x12 bytes), align: 1
   Segment part 37.            Intra module refs:   _PrintfLarge
     -------------------------------------------------------------------------
 DATA16_C
-  Relative segment, address: 3307 - 330D (0x7 bytes), align: 0
+  Relative segment, address: 34D9 - 34DF (0x7 bytes), align: 0
   Segment part 2.             Intra module refs:   _PrintfLarge
     -------------------------------------------------------------------------
 DATA16_C
-  Relative segment, address: 330E - 3311 (0x4 bytes), align: 0
+  Relative segment, address: 34E0 - 34E3 (0x4 bytes), align: 0
   Segment part 3.             Intra module refs:   _LdtobLarge
     -------------------------------------------------------------------------
 DATA16_C
-  Relative segment, address: 3312 - 3315 (0x4 bytes), align: 0
+  Relative segment, address: 34E4 - 34E7 (0x4 bytes), align: 0
   Segment part 4.             Intra module refs:   _LdtobLarge
     -------------------------------------------------------------------------
 DATA16_C
-  Relative segment, address: 3316 - 3319 (0x4 bytes), align: 0
+  Relative segment, address: 34E8 - 34EB (0x4 bytes), align: 0
   Segment part 5.             Intra module refs:   _LdtobLarge
     -------------------------------------------------------------------------
 DATA16_C
-  Relative segment, address: 331A - 331D (0x4 bytes), align: 0
+  Relative segment, address: 34EC - 34EF (0x4 bytes), align: 0
   Segment part 6.             Intra module refs:   _LdtobLarge
     -------------------------------------------------------------------------
 DATA16_C
-  Relative segment, address: 331E - 331F (0x2 bytes), align: 0
+  Relative segment, address: 34F0 - 34F1 (0x2 bytes), align: 0
   Segment part 7.             Intra module refs:   _GenldLarge
 
     -------------------------------------------------------------------------
@@ -1956,11 +2190,11 @@ DATA16_C
   SEGMENTS IN THE MODULE
   ======================
 <CODE> 1 (was CODE)
-  Relative segment, address: 6E44 - 6E4F (0xc bytes), align: 1
+  Relative segment, address: 723C - 7247 (0xc bytes), align: 1
   Segment part 2.
            ENTRY                   ADDRESS         REF BY
            =====                   =======         ======
-           _SProut                 6E44            sprintf (?sprintf)
+           _SProut                 723C            sprintf (?sprintf)
                CSTACK = 00000000 ( 00000004 )
 
 
@@ -1985,6 +2219,8 @@ Module                CODE      DATA      CONST
 ?IndCallR15              4
 ?Mul32Hw                48
 ?Mul32fHw              306
+?ShiftLeft32            22
+?ShiftLeft32_8n         24
 ?ShiftRight32u          94
 ?ShiftRight32u_8n       16
 ?__dbg_break             2
@@ -2008,12 +2244,13 @@ _Add32f                354
 _Cast32fto32u           12
 _CmpLt32f               10
 _Div32f                304
-diskio                 222
+diskio                 456     24            12
   + shared                             2
 ff                   6 470      4           143
-gps                  1 262      2           189
+gps                  1 272      2           190
   + shared                             2
-main                   346  1 231      6     21
+main                   596  1 235     12    476
+  + common              38
 mmc                    680      1             1
 sd_spi                 160             7
   + shared                             1
@@ -2023,8 +2260,8 @@ uart                   414    394     10
 N/A (command line)          1 024
 N/A (alignment)
 ----------          ------  -----     --    ---
-Total:              15 388  2 656     28    379
-  + common              36
+Total:              15 928  2 684     34    847
+  + common              38
 
 
                 ****************************************
@@ -2037,661 +2274,677 @@ Total:              15 388  2 656     28    379
                     : indirect calls
                              CSTACK
     | Stack used (prev) :  00000000
-  01  uartTxISR
+  01  ButtonISR
       | Stack used (prev) :  00000000
-      | + function block  :  00000006
+      | + function block  :  00000004
   <-Sub-tree of type: Interrupt function tree that does not make
                     : indirect calls
-    | Stack used          :  00000006
+    | Stack used          :  00000004
 
 
   ->Sub-tree of type: Interrupt function tree that does not make
                     : indirect calls
                              CSTACK
-    | Stack used (prev) :  00000006
+    | Stack used (prev) :  00000004
+  01  uartTxISR
+      | Stack used (prev) :  00000004
+      | + function block  :  00000006
+  <-Sub-tree of type: Interrupt function tree that does not make
+                    : indirect calls
+    | Stack used          :  0000000A
+
+
+  ->Sub-tree of type: Interrupt function tree that does not make
+                    : indirect calls
+                             CSTACK
+    | Stack used (prev) :  0000000A
   01  uartRxISR
-      | Stack used (prev) :  00000006
+      | Stack used (prev) :  0000000A
       | + function block  :  0000000A
   <-Sub-tree of type: Interrupt function tree that does not make
                     : indirect calls
-    | Stack used          :  00000010
+    | Stack used          :  00000014
 
 
   ->Sub-tree of type: Indirectly called function tree that does not make
                     : indirect calls (Is not an interrupt and is not flagged
                     : as not overlayable)
                              CSTACK
-    | Stack used (prev) :  00000010
+    | Stack used (prev) :  00000014
   01  __iar_Memchr
-      | Stack used (prev) :  00000010
+      | Stack used (prev) :  00000014
       | + function block  :  00000004
   <-Sub-tree of type: Indirectly called function tree that does not make
                     : indirect calls (Is not an interrupt and is not flagged
                     : as not overlayable)
-    | Stack used          :  00000014
+    | Stack used          :  00000018
 
 
   ->Sub-tree of type: Indirectly called function tree that does not make
                     : indirect calls (Is not an interrupt and is not flagged
                     : as not overlayable)
                              CSTACK
-    | Stack used (prev) :  00000010
+    | Stack used (prev) :  00000014
   01  memcpy
-      | Stack used (prev) :  00000010
+      | Stack used (prev) :  00000014
       | + function block  :  00000004
   <-Sub-tree of type: Indirectly called function tree that does not make
                     : indirect calls (Is not an interrupt and is not flagged
                     : as not overlayable)
-    | Stack used          :  00000014
+    | Stack used          :  00000018
 
 
   ->Sub-tree of type: Indirectly called function tree that does not make
                     : indirect calls (Is not an interrupt and is not flagged
                     : as not overlayable)
                              CSTACK
-    | Stack used (prev) :  00000010
+    | Stack used (prev) :  00000014
   01  __iar_Strchr
-      | Stack used (prev) :  00000010
+      | Stack used (prev) :  00000014
       | + function block  :  00000004
   <-Sub-tree of type: Indirectly called function tree that does not make
                     : indirect calls (Is not an interrupt and is not flagged
                     : as not overlayable)
-    | Stack used          :  00000014
+    | Stack used          :  00000018
 
 
   ->Sub-tree of type: Indirectly called function tree that does not make
                     : indirect calls (Is not an interrupt and is not flagged
                     : as not overlayable)
                              CSTACK
-    | Stack used (prev) :  00000010
+    | Stack used (prev) :  00000014
   01  strlen
-      | Stack used (prev) :  00000010
+      | Stack used (prev) :  00000014
       | + function block  :  00000004
   <-Sub-tree of type: Indirectly called function tree that does not make
                     : indirect calls (Is not an interrupt and is not flagged
                     : as not overlayable)
-    | Stack used          :  00000014
+    | Stack used          :  00000018
 
 
   ->Sub-tree of type: Indirectly called function tree that does not make
                     : indirect calls (Is not an interrupt and is not flagged
                     : as not overlayable)
                              CSTACK
-    | Stack used (prev) :  00000010
+    | Stack used (prev) :  00000014
   01  _SProut
-      | Stack used (prev) :  00000010
+      | Stack used (prev) :  00000014
       | + function block  :  00000004
   <-Sub-tree of type: Indirectly called function tree that does not make
                     : indirect calls (Is not an interrupt and is not flagged
                     : as not overlayable)
-    | Stack used          :  00000014
+    | Stack used          :  00000018
 
 
   ->Sub-tree of type: Function tree
                              CSTACK
-    | Stack used (prev) :  00000014
-  02    uart_read
+    | Stack used (prev) :  00000018
+  02    strlen
         | Stack used (prev) :  00000014
+        | + function block  :  00000004
+        |  Already listed
+  05          _PutcharLarge
+              | Stack used (prev) :  00000018
+              | + function block  :  00000006
+  04        _PutcharsLarge
+            | Stack used (prev) :  0000001E
+            | + function block  :  0000000C
+  04        _PutcharsLarge
+            | Stack used (prev) :  0000001E
+            | + function block  :  0000000C
+            |  Already listed
+  04        _PutcharsLarge
+            | Stack used (prev) :  0000001E
+            | + function block  :  0000000C
+            |  Already listed
+  04        _PutcharLarge
+            | Stack used (prev) :  00000018
+            | + function block  :  00000006
+            |  Already listed
+  06            memcpy
+                | Stack used (prev) :  00000014
+                | + function block  :  00000004
+                |  Already listed
+  05          _GenldLarge
+              | Stack used (prev) :  00000018
+              | + function block  :  00000020
+  05          scale
+              | Stack used (prev) :  00000018
+              | + function block  :  00000010
+  05          scale
+              | Stack used (prev) :  00000018
+              | + function block  :  00000010
+              |  Already listed
+  05          __iar_Dunscale
+              | Stack used (prev) :  00000018
+              | + function block  :  00000004
+  05          memcpy
+              | Stack used (prev) :  00000014
+              | + function block  :  00000004
+              |  Already listed
+  04        _LdtobLarge
+            | Stack used (prev) :  00000038
+            | + function block  :  0000004A
+  05          _Mod64u
+              | Stack used (prev) :  00000018
+              | + function block  :  00000016
+  05          _Div64u
+              | Stack used (prev) :  00000018
+              | + function block  :  0000001E
+  04        _LitobLarge
+            | Stack used (prev) :  00000036
+            | + function block  :  0000002A
+  04        _LitobLarge
+            | Stack used (prev) :  00000036
+            | + function block  :  0000002A
+            |  Already listed
+  05          _PutcharsLarge
+              | Stack used (prev) :  0000001E
+              | + function block  :  0000000C
+              |  Already listed
+  04        pad
+            | Stack used (prev) :  0000002A
+            | + function block  :  0000000E
+  04        pad
+            | Stack used (prev) :  0000002A
+            | + function block  :  0000000E
+            |  Already listed
+  04        pad
+            | Stack used (prev) :  0000002A
+            | + function block  :  0000000E
+            |  Already listed
+  04        pad
+            | Stack used (prev) :  0000002A
+            | + function block  :  0000000E
+            |  Already listed
+  04        pad
+            | Stack used (prev) :  0000002A
+            | + function block  :  0000000E
+            |  Already listed
+  04        LoadInt
+            | Stack used (prev) :  00000018
+            | + function block  :  00000004
+  04        strlen
+            | Stack used (prev) :  00000014
+            | + function block  :  00000004
+            |  Already listed
+  04        __iar_Strchr
+            | Stack used (prev) :  00000014
+            | + function block  :  00000004
+            |  Already listed
+  04        __iar_Memchr
+            | Stack used (prev) :  00000014
+            | + function block  :  00000004
+            |  Already listed
+  03      _PrintfLarge
+          | Stack used (prev) :  00000082
+          | + function block  :  00000074
+  02    sprintf
+        | Stack used (prev) :  000000F6
+        | + function block  :  0000000C
+  02    uart_read
+        | Stack used (prev) :  00000018
         | + function block  :  00000006
   03      uart_enable
-          | Stack used (prev) :  00000014
+          | Stack used (prev) :  00000018
           | + function block  :  00000004
   02    uart_init
+        | Stack used (prev) :  0000001C
+        | + function block  :  00000004
+  02    record_button_init
         | Stack used (prev) :  00000018
         | + function block  :  00000004
-  06            _PutcharLarge
-                | Stack used (prev) :  00000014
-                | + function block  :  00000006
-  05          _PutcharsLarge
-              | Stack used (prev) :  0000001A
-              | + function block  :  0000000C
-  05          _PutcharsLarge
-              | Stack used (prev) :  0000001A
-              | + function block  :  0000000C
-              |  Already listed
-  05          _PutcharsLarge
-              | Stack used (prev) :  0000001A
-              | + function block  :  0000000C
-              |  Already listed
-  05          _PutcharLarge
-              | Stack used (prev) :  00000014
-              | + function block  :  00000006
-              |  Already listed
-  07              memcpy
-                  | Stack used (prev) :  00000010
-                  | + function block  :  00000004
-                  |  Already listed
-  06            _GenldLarge
-                | Stack used (prev) :  00000014
-                | + function block  :  00000020
-  06            scale
-                | Stack used (prev) :  00000014
-                | + function block  :  00000010
-  06            scale
-                | Stack used (prev) :  00000014
-                | + function block  :  00000010
-                |  Already listed
-  06            __iar_Dunscale
-                | Stack used (prev) :  00000014
-                | + function block  :  00000004
-  06            memcpy
-                | Stack used (prev) :  00000010
-                | + function block  :  00000004
-                |  Already listed
-  05          _LdtobLarge
-              | Stack used (prev) :  00000034
-              | + function block  :  0000004A
-  06            _Mod64u
-                | Stack used (prev) :  00000014
-                | + function block  :  00000016
-  06            _Div64u
-                | Stack used (prev) :  00000014
-                | + function block  :  0000001E
-  05          _LitobLarge
-              | Stack used (prev) :  00000032
-              | + function block  :  0000002A
-  05          _LitobLarge
-              | Stack used (prev) :  00000032
-              | + function block  :  0000002A
-              |  Already listed
-  06            _PutcharsLarge
-                | Stack used (prev) :  0000001A
-                | + function block  :  0000000C
-                |  Already listed
-  05          pad
-              | Stack used (prev) :  00000026
-              | + function block  :  0000000E
-  05          pad
-              | Stack used (prev) :  00000026
-              | + function block  :  0000000E
-              |  Already listed
-  05          pad
-              | Stack used (prev) :  00000026
-              | + function block  :  0000000E
-              |  Already listed
-  05          pad
-              | Stack used (prev) :  00000026
-              | + function block  :  0000000E
-              |  Already listed
-  05          pad
-              | Stack used (prev) :  00000026
-              | + function block  :  0000000E
-              |  Already listed
-  05          LoadInt
-              | Stack used (prev) :  00000014
-              | + function block  :  00000004
-  05          strlen
-              | Stack used (prev) :  00000010
-              | + function block  :  00000004
-              |  Already listed
-  05          __iar_Strchr
-              | Stack used (prev) :  00000010
-              | + function block  :  00000004
-              |  Already listed
-  05          __iar_Memchr
-              | Stack used (prev) :  00000010
-              | + function block  :  00000004
-              |  Already listed
-  04        _PrintfLarge
-            | Stack used (prev) :  0000007E
-            | + function block  :  00000074
   03      sprintf
-          | Stack used (prev) :  000000F2
+          | Stack used (prev) :  000000F6
           | + function block  :  0000000C
+          |  Already listed
   02    spool_coords
-        | Stack used (prev) :  000000FE
+        | Stack used (prev) :  00000102
         | + function block  :  0000000C
   03      timers_setup
-          | Stack used (prev) :  00000014
+          | Stack used (prev) :  00000018
           | + function block  :  00000004
   03      clocks_setup
-          | Stack used (prev) :  00000014
+          | Stack used (prev) :  00000018
           | + function block  :  00000004
   03      led_setup
-          | Stack used (prev) :  00000014
+          | Stack used (prev) :  00000018
           | + function block  :  00000004
   02    hw_setup
-        | Stack used (prev) :  00000018
+        | Stack used (prev) :  0000001C
         | + function block  :  00000004
   03      parse_date
-          | Stack used (prev) :  00000014
+          | Stack used (prev) :  00000018
           | + function block  :  00000004
   03      parse_coord
-          | Stack used (prev) :  00000014
+          | Stack used (prev) :  00000018
           | + function block  :  00000018
   03      parse_coord
-          | Stack used (prev) :  00000014
+          | Stack used (prev) :  00000018
           | + function block  :  00000018
           |  Already listed
   03      parse_time
-          | Stack used (prev) :  00000014
+          | Stack used (prev) :  00000018
           | + function block  :  00000004
   02    parse_line
-        | Stack used (prev) :  0000002C
+        | Stack used (prev) :  00000030
         | + function block  :  0000000C
   03      uart_is_tx_clear
-          | Stack used (prev) :  00000014
+          | Stack used (prev) :  00000018
           | + function block  :  00000004
   03      uart_read
-          | Stack used (prev) :  00000014
+          | Stack used (prev) :  00000018
           | + function block  :  00000006
           |  Already listed
   04        uart_send_available
-            | Stack used (prev) :  00000014
-            | + function block  :  00000004
-  03      uart_send
-          | Stack used (prev) :  00000018
-          | + function block  :  00000004
-  03      wait
-          | Stack used (prev) :  00000014
-          | + function block  :  0000000A
-  02    gps_init
-        | Stack used (prev) :  0000001E
-        | + function block  :  00000006
-  05          disk_status
-              | Stack used (prev) :  00000014
-              | + function block  :  00000004
-  04        validate
             | Stack used (prev) :  00000018
             | + function block  :  00000004
+  03      uart_send
+          | Stack used (prev) :  0000001C
+          | + function block  :  00000004
+  03      wait
+          | Stack used (prev) :  00000018
+          | + function block  :  0000000A
+  02    gps_init
+        | Stack used (prev) :  00000022
+        | + function block  :  00000006
+  05          disk_status
+              | Stack used (prev) :  00000018
+              | + function block  :  00000004
+  04        validate
+            | Stack used (prev) :  0000001C
+            | + function block  :  00000004
   08                sd_spi_write_byte
-                    | Stack used (prev) :  00000014
+                    | Stack used (prev) :  00000018
                     | + function block  :  00000004
   08                sd_spi_write
-                    | Stack used (prev) :  00000014
+                    | Stack used (prev) :  00000018
                     | + function block  :  00000004
   09                  sd_spi_write_byte
-                      | Stack used (prev) :  00000014
+                      | Stack used (prev) :  00000018
                       | + function block  :  00000004
                       |  Already listed
   10                    sd_spi_write
-                        | Stack used (prev) :  00000014
+                        | Stack used (prev) :  00000018
                         | + function block  :  00000004
                         |  Already listed
   09                  mmcSendCmd
-                      | Stack used (prev) :  00000018
+                      | Stack used (prev) :  0000001C
                       | + function block  :  00000012
   09                  mmcSendCmd
-                      | Stack used (prev) :  00000018
+                      | Stack used (prev) :  0000001C
                       | + function block  :  00000012
                       |  Already listed
   10                    sd_spi_write_byte
-                        | Stack used (prev) :  00000014
+                        | Stack used (prev) :  00000018
                         | + function block  :  00000004
                         |  Already listed
   09                  mmcGetResponse
-                      | Stack used (prev) :  00000018
+                      | Stack used (prev) :  0000001C
                       | + function block  :  00000006
   09                  mmcGetResponse
-                      | Stack used (prev) :  00000018
+                      | Stack used (prev) :  0000001C
                       | + function block  :  00000006
                       |  Already listed
   10                    sd_spi_write_byte
-                        | Stack used (prev) :  00000014
+                        | Stack used (prev) :  00000018
                         | + function block  :  00000004
                         |  Already listed
   11                      sd_spi_write_byte
-                          | Stack used (prev) :  00000014
+                          | Stack used (prev) :  00000018
                           | + function block  :  00000004
                           |  Already listed
   11                      mmcSendCmd
-                          | Stack used (prev) :  00000018
+                          | Stack used (prev) :  0000001C
                           | + function block  :  00000012
                           |  Already listed
   11                      mmcSendCmd
-                          | Stack used (prev) :  00000018
+                          | Stack used (prev) :  0000001C
                           | + function block  :  00000012
                           |  Already listed
   11                      mmcGetResponse
-                          | Stack used (prev) :  00000018
+                          | Stack used (prev) :  0000001C
                           | + function block  :  00000006
                           |  Already listed
   11                      mmcGetResponse
-                          | Stack used (prev) :  00000018
+                          | Stack used (prev) :  0000001C
                           | + function block  :  00000006
                           |  Already listed
   10                    mmcGoIdle
-                        | Stack used (prev) :  0000002A
+                        | Stack used (prev) :  0000002E
                         | + function block  :  00000006
   09                  mmcInit
-                      | Stack used (prev) :  00000030
+                      | Stack used (prev) :  00000034
                       | + function block  :  00000006
   08                mmcSetBlockLength
-                    | Stack used (prev) :  00000036
+                    | Stack used (prev) :  0000003A
                     | + function block  :  00000008
   08                mmcSendCmd
-                    | Stack used (prev) :  00000018
+                    | Stack used (prev) :  0000001C
                     | + function block  :  00000012
                     |  Already listed
   09                  sd_spi_write_byte
-                      | Stack used (prev) :  00000014
+                      | Stack used (prev) :  00000018
                       | + function block  :  00000004
                       |  Already listed
   08                mmcCheckBusy
-                    | Stack used (prev) :  00000018
+                    | Stack used (prev) :  0000001C
                     | + function block  :  00000006
   09                  sd_spi_write_byte
-                      | Stack used (prev) :  00000014
+                      | Stack used (prev) :  00000018
                       | + function block  :  00000004
                       |  Already listed
   08                mmcGetXXResponse
-                    | Stack used (prev) :  00000018
+                    | Stack used (prev) :  0000001C
                     | + function block  :  00000008
   07              mmcWriteBlock
-                  | Stack used (prev) :  0000003E
+                  | Stack used (prev) :  00000042
                   | + function block  :  00000010
   06            disk_write
-                | Stack used (prev) :  0000004E
+                | Stack used (prev) :  00000052
                 | + function block  :  00000012
   08                sd_spi_read
-                    | Stack used (prev) :  00000014
+                    | Stack used (prev) :  00000018
                     | + function block  :  00000006
   08                sd_spi_write_byte
-                    | Stack used (prev) :  00000014
+                    | Stack used (prev) :  00000018
                     | + function block  :  00000004
                     |  Already listed
   08                mmcSetBlockLength
-                    | Stack used (prev) :  00000036
+                    | Stack used (prev) :  0000003A
                     | + function block  :  00000008
                     |  Already listed
   08                mmcSendCmd
-                    | Stack used (prev) :  00000018
+                    | Stack used (prev) :  0000001C
                     | + function block  :  00000012
                     |  Already listed
   08                mmcGetXXResponse
-                    | Stack used (prev) :  00000018
+                    | Stack used (prev) :  0000001C
                     | + function block  :  00000008
                     |  Already listed
   08                mmcGetResponse
-                    | Stack used (prev) :  00000018
+                    | Stack used (prev) :  0000001C
                     | + function block  :  00000006
                     |  Already listed
   07              mmcReadBlock
-                  | Stack used (prev) :  0000003E
+                  | Stack used (prev) :  00000042
                   | + function block  :  00000010
   06            disk_read
-                | Stack used (prev) :  0000004E
+                | Stack used (prev) :  00000052
                 | + function block  :  00000012
   05          move_window
-              | Stack used (prev) :  00000060
+              | Stack used (prev) :  00000064
               | + function block  :  00000012
   05          mem_set
-              | Stack used (prev) :  00000014
+              | Stack used (prev) :  00000018
               | + function block  :  00000004
   05          disk_ioctl
-              | Stack used (prev) :  00000014
+              | Stack used (prev) :  00000018
               | + function block  :  00000004
   05          disk_write
-              | Stack used (prev) :  0000004E
+              | Stack used (prev) :  00000052
               | + function block  :  00000012
               |  Already listed
   04        sync
-            | Stack used (prev) :  00000072
+            | Stack used (prev) :  00000076
             | + function block  :  00000008
   04        move_window
-            | Stack used (prev) :  00000060
+            | Stack used (prev) :  00000064
             | + function block  :  00000012
             |  Already listed
   04        get_fattime
-            | Stack used (prev) :  00000014
-            | + function block  :  00000004
+            | Stack used (prev) :  00000018
+            | + function block  :  00000014
   04        disk_write
-            | Stack used (prev) :  0000004E
+            | Stack used (prev) :  00000052
             | + function block  :  00000012
             |  Already listed
   03      f_sync
-          | Stack used (prev) :  0000007A
+          | Stack used (prev) :  0000007E
           | + function block  :  00000008
   02    f_close
-        | Stack used (prev) :  00000082
+        | Stack used (prev) :  00000086
         | + function block  :  00000006
   03      validate
-          | Stack used (prev) :  00000018
+          | Stack used (prev) :  0000001C
           | + function block  :  00000004
           |  Already listed
   05          move_window
-              | Stack used (prev) :  00000060
+              | Stack used (prev) :  00000064
               | + function block  :  00000012
               |  Already listed
   05          move_window
-              | Stack used (prev) :  00000060
+              | Stack used (prev) :  00000064
               | + function block  :  00000012
               |  Already listed
   05          move_window
-              | Stack used (prev) :  00000060
+              | Stack used (prev) :  00000064
               | + function block  :  00000012
               |  Already listed
   05          move_window
-              | Stack used (prev) :  00000060
+              | Stack used (prev) :  00000064
               | + function block  :  00000012
               |  Already listed
   04        put_fat
-            | Stack used (prev) :  00000072
+            | Stack used (prev) :  00000076
             | + function block  :  00000014
   04        put_fat
-            | Stack used (prev) :  00000072
+            | Stack used (prev) :  00000076
             | + function block  :  00000014
             |  Already listed
   05          move_window
-              | Stack used (prev) :  00000060
+              | Stack used (prev) :  00000064
               | + function block  :  00000012
               |  Already listed
   05          move_window
-              | Stack used (prev) :  00000060
+              | Stack used (prev) :  00000064
               | + function block  :  00000012
               |  Already listed
   05          move_window
-              | Stack used (prev) :  00000060
+              | Stack used (prev) :  00000064
               | + function block  :  00000012
               |  Already listed
   05          move_window
-              | Stack used (prev) :  00000060
+              | Stack used (prev) :  00000064
               | + function block  :  00000012
               |  Already listed
   04        get_fat
-            | Stack used (prev) :  00000072
+            | Stack used (prev) :  00000076
             | + function block  :  00000010
   04        get_fat
-            | Stack used (prev) :  00000072
+            | Stack used (prev) :  00000076
             | + function block  :  00000010
             |  Already listed
   03      create_chain
-          | Stack used (prev) :  00000086
+          | Stack used (prev) :  0000008A
           | + function block  :  00000018
   03      create_chain
-          | Stack used (prev) :  00000086
+          | Stack used (prev) :  0000008A
           | + function block  :  00000018
           |  Already listed
   03      clust2sect
-          | Stack used (prev) :  00000014
+          | Stack used (prev) :  00000018
           | + function block  :  00000006
   03      mem_cpy
-          | Stack used (prev) :  00000014
+          | Stack used (prev) :  00000018
           | + function block  :  00000004
   03      mem_cpy
-          | Stack used (prev) :  00000014
+          | Stack used (prev) :  00000018
           | + function block  :  00000004
           |  Already listed
   03      disk_write
-          | Stack used (prev) :  0000004E
+          | Stack used (prev) :  00000052
           | + function block  :  00000012
           |  Already listed
   03      disk_read
-          | Stack used (prev) :  0000004E
+          | Stack used (prev) :  00000052
           | + function block  :  00000012
           |  Already listed
   02    f_write
-        | Stack used (prev) :  0000009E
+        | Stack used (prev) :  000000A2
         | + function block  :  00000014
   05          disk_read
-              | Stack used (prev) :  0000004E
+              | Stack used (prev) :  00000052
               | + function block  :  00000012
               |  Already listed
   04        check_fs
-            | Stack used (prev) :  00000060
+            | Stack used (prev) :  00000064
             | + function block  :  00000008
   04        check_fs
-            | Stack used (prev) :  00000060
+            | Stack used (prev) :  00000064
             | + function block  :  00000008
             |  Already listed
   04        disk_read
-            | Stack used (prev) :  0000004E
+            | Stack used (prev) :  00000052
             | + function block  :  00000012
             |  Already listed
   04        disk_status
-            | Stack used (prev) :  00000014
+            | Stack used (prev) :  00000018
             | + function block  :  00000004
             |  Already listed
   05          mmcInit
-              | Stack used (prev) :  00000030
+              | Stack used (prev) :  00000034
               | + function block  :  00000006
               |  Already listed
   06            sd_spi_init
-                | Stack used (prev) :  00000014
+                | Stack used (prev) :  00000018
                 | + function block  :  00000004
   05          sd_hw_init
-              | Stack used (prev) :  00000018
+              | Stack used (prev) :  0000001C
               | + function block  :  00000004
   04        disk_initialize
-            | Stack used (prev) :  00000036
+            | Stack used (prev) :  0000003A
             | + function block  :  00000004
   03      chk_mounted
-          | Stack used (prev) :  00000068
+          | Stack used (prev) :  0000006C
           | + function block  :  00000016
   05          chk_chr
-              | Stack used (prev) :  00000014
+              | Stack used (prev) :  00000018
               | + function block  :  00000004
   05          mem_set
-              | Stack used (prev) :  00000014
+              | Stack used (prev) :  00000018
               | + function block  :  00000004
               |  Already listed
   04        create_name
-            | Stack used (prev) :  00000018
+            | Stack used (prev) :  0000001C
             | + function block  :  00000014
   06            create_chain
-                | Stack used (prev) :  00000086
+                | Stack used (prev) :  0000008A
                 | + function block  :  00000018
                 |  Already listed
   06            get_fat
-                | Stack used (prev) :  00000072
+                | Stack used (prev) :  00000076
                 | + function block  :  00000010
                 |  Already listed
   06            clust2sect
-                | Stack used (prev) :  00000014
+                | Stack used (prev) :  00000018
                 | + function block  :  00000006
                 |  Already listed
   06            clust2sect
-                | Stack used (prev) :  00000014
+                | Stack used (prev) :  00000018
                 | + function block  :  00000006
                 |  Already listed
   06            move_window
-                | Stack used (prev) :  00000060
+                | Stack used (prev) :  00000064
                 | + function block  :  00000012
                 |  Already listed
   06            move_window
-                | Stack used (prev) :  00000060
+                | Stack used (prev) :  00000064
                 | + function block  :  00000012
                 |  Already listed
   06            mem_set
-                | Stack used (prev) :  00000014
+                | Stack used (prev) :  00000018
                 | + function block  :  00000004
                 |  Already listed
   05          dir_next
-              | Stack used (prev) :  0000009E
+              | Stack used (prev) :  000000A2
               | + function block  :  00000010
   06            get_fat
-                | Stack used (prev) :  00000072
+                | Stack used (prev) :  00000076
                 | + function block  :  00000010
                 |  Already listed
   06            clust2sect
-                | Stack used (prev) :  00000014
+                | Stack used (prev) :  00000018
                 | + function block  :  00000006
                 |  Already listed
   05          dir_sdi
-              | Stack used (prev) :  00000082
+              | Stack used (prev) :  00000086
               | + function block  :  0000000C
   05          move_window
-              | Stack used (prev) :  00000060
+              | Stack used (prev) :  00000064
               | + function block  :  00000012
               |  Already listed
   05          mem_cmp
-              | Stack used (prev) :  00000014
+              | Stack used (prev) :  00000018
               | + function block  :  00000006
   04        dir_find
-            | Stack used (prev) :  000000AE
+            | Stack used (prev) :  000000B2
             | + function block  :  00000008
   04        dir_sdi
-            | Stack used (prev) :  00000082
+            | Stack used (prev) :  00000086
             | + function block  :  0000000C
             |  Already listed
   03      follow_path
-          | Stack used (prev) :  000000B6
+          | Stack used (prev) :  000000BA
           | + function block  :  00000008
   04        dir_next
-            | Stack used (prev) :  0000009E
+            | Stack used (prev) :  000000A2
             | + function block  :  00000010
             |  Already listed
   04        dir_sdi
-            | Stack used (prev) :  00000082
+            | Stack used (prev) :  00000086
             | + function block  :  0000000C
             |  Already listed
   04        move_window
-            | Stack used (prev) :  00000060
+            | Stack used (prev) :  00000064
             | + function block  :  00000012
             |  Already listed
   04        move_window
-            | Stack used (prev) :  00000060
+            | Stack used (prev) :  00000064
             | + function block  :  00000012
             |  Already listed
   04        mem_set
-            | Stack used (prev) :  00000014
+            | Stack used (prev) :  00000018
             | + function block  :  00000004
             |  Already listed
   04        mem_cpy
-            | Stack used (prev) :  00000014
+            | Stack used (prev) :  00000018
             | + function block  :  00000004
             |  Already listed
   03      dir_register
-          | Stack used (prev) :  000000AE
+          | Stack used (prev) :  000000B2
           | + function block  :  0000000C
   04        put_fat
-            | Stack used (prev) :  00000072
+            | Stack used (prev) :  00000076
             | + function block  :  00000014
             |  Already listed
   04        get_fat
-            | Stack used (prev) :  00000072
+            | Stack used (prev) :  00000076
             | + function block  :  00000010
             |  Already listed
   03      remove_chain
-          | Stack used (prev) :  00000086
+          | Stack used (prev) :  0000008A
           | + function block  :  00000014
   03      move_window
-          | Stack used (prev) :  00000060
+          | Stack used (prev) :  00000064
           | + function block  :  00000012
           |  Already listed
   03      get_fattime
-          | Stack used (prev) :  00000014
-          | + function block  :  00000004
+          | Stack used (prev) :  00000018
+          | + function block  :  00000014
           |  Already listed
   02    f_open
-        | Stack used (prev) :  000000BE
+        | Stack used (prev) :  000000C2
         | + function block  :  00000038
   02    f_mount
-        | Stack used (prev) :  00000014
+        | Stack used (prev) :  00000018
         | + function block  :  00000004
+  02    update_fattime
+        | Stack used (prev) :  00000018
+        | + function block  :  00000008
   01  main
-      | Stack used (prev) :  0000010A
+      | Stack used (prev) :  0000010E
       | + function block  :  00000026
-  <-Sub-tree of type: Function tree
-    | Stack used          :  00000130
-
-
-  ->Sub-tree of type: Function tree
-                             CSTACK
-    | Stack used (prev) :  00000130
-  01  exit
-      | Stack used (prev) :  00000130
-      | + function block  :  00000004
   <-Sub-tree of type: Function tree
     | Stack used          :  00000134
 
@@ -2699,7 +2952,7 @@ Total:              15 388  2 656     28    379
   ->Sub-tree of type: Function tree
                              CSTACK
     | Stack used (prev) :  00000134
-  01  __data16_memzero
+  01  exit
       | Stack used (prev) :  00000134
       | + function block  :  00000004
   <-Sub-tree of type: Function tree
@@ -2709,15 +2962,25 @@ Total:              15 388  2 656     28    379
   ->Sub-tree of type: Function tree
                              CSTACK
     | Stack used (prev) :  00000138
-  02    memcpy
-        | Stack used (prev) :  00000010
-        | + function block  :  00000004
-        |  Already listed
-  01  __data16_memcpy
+  01  __data16_memzero
       | Stack used (prev) :  00000138
       | + function block  :  00000004
   <-Sub-tree of type: Function tree
     | Stack used          :  0000013C
+
+
+  ->Sub-tree of type: Function tree
+                             CSTACK
+    | Stack used (prev) :  0000013C
+  02    memcpy
+        | Stack used (prev) :  00000014
+        | + function block  :  00000004
+        |  Already listed
+  01  __data16_memcpy
+      | Stack used (prev) :  0000013C
+      | + function block  :  00000004
+  <-Sub-tree of type: Function tree
+    | Stack used          :  00000140
 
 
 
@@ -2735,21 +2998,24 @@ DATA16_AN                              0003 - 0003               1   rel    0
                                        0006 - 0007               2 
                                        0019 - 001B               3 
                                        001D - 001E               2 
+                                       0020 - 0021               2 
+                                       0023 - 0025               3 
+                                       0027 - 0027               1 
                                        0053 - 0053               1 
                                        0056 - 0058               3 
                                        0068 - 006B               4 
                                        006E - 006F               2 
                                        00D0 - 00D7               8 
                                        0120 - 0121               2 
-DATA16_I                               1100 - 1102               3   rel    1
-DATA16_Z                               1104 - 1760             65D   rel    1
+DATA16_I                               1100 - 1112              13   rel    1
+DATA16_Z                               1114 - 177C             669   rel    1
 CSTACK                                 2D00 - 30FF             400   rel    1
 CSTART                                 3100 - 3127              28   rel    1
-ISR_CODE                               3128 - 31A7              80   rel    1
-DATA16_C                               31A8 - 331F             178   rel    0
-DATA16_ID                              3320 - 3322               3   rel    1
-<CODE> 1                               3324 - 6E95            3B72   rel    1
-INTVEC                                 FFC0 - FFE3              24   com    1
+ISR_CODE                               3128 - 31B5              8E   rel    1
+DATA16_C                               31B6 - 34F1             33C   rel    0
+DATA16_ID                              34F2 - 3504              13   rel    1
+<CODE> 1                               3506 - 7285            3D80   rel    1
+INTVEC                                 FFC0 - FFE5              26   com    1
 RESET                                  FFFE - FFFF               2   rel    1
 
                 ****************************************
@@ -2758,9 +3024,9 @@ RESET                                  FFFE - FFFF               2   rel    1
                 *                                      *
                 ****************************************
 
- 15 424 bytes of CODE  memory
-  2 656 bytes of DATA  memory (+ 28 absolute )
-    379 bytes of CONST memory
+ 15 966 bytes of CODE  memory
+  2 684 bytes of DATA  memory (+ 34 absolute )
+    847 bytes of CONST memory
 
 Errors: none
 Warnings: none

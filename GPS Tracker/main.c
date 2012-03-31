@@ -3,7 +3,7 @@
  */
 #include <msp430.h>
 #include <msp430f2618.h>
-
+#include <string.h>
 #include <stdio.h>
 
 #include "hw_conf.h"
@@ -17,11 +17,11 @@ void hw_setup(void);
 // TODO remove this!
 char line[128];
 
-#define HEADER_LEN 14
-#define FOOTER_LEN 12
-#define die(x) ((void)0)
-const char header_str[HEADER_LEN] = "Start of file\n";
-const char footer_str[FOOTER_LEN] = "End of file\n";
+#define MAX_SAMPLES ((unsigned int)-1)
+#define die(x) __no_operation()
+
+const char* KML_Header = "<?xml version=\"1.0\"?><kml xmlns=\"http://www.opengis.net/kml/2.2\" xmlns:gx=\"http://www.google.com/kml/ext/2.2\" xmlns:kml=\"http://www.opengis.net/kml/2.2\" xmlns:atom=\"http://www.w3.org/2005/Atom\"><Document><name>Project.kml</name><open>1</open><Placemark><name>course</name><Style><LineStyle><color>ff0000ff</color><width>3</width></LineStyle></Style><LineString><coordinates>";
+const char* KML_Footer = "</coordinates></LineString></Placemark></Document></kml>";
 
 unsigned long cardSize = 0;
 FIL Fil;			/* File object */
@@ -30,6 +30,8 @@ FATFS Fatfs;		/* File system object */
 FRESULT result;
 
 UINT spool_coords( CoordType latitude, CoordType longitude, char* str );
+void update_fattime(int year, int month, int day, int hour, int minutes, int seconds);
+void record_button_init(void);
 
 void main(void)
 {
@@ -37,64 +39,80 @@ void main(void)
   int nextIn = 0;
   UINT len, bw;
   char bFileCreated = 0;
+  unsigned int sampleCounter = 0;
   
   WDTCTL = WDTPW | WDTHOLD; // stop watch-dog timer
 
   hw_setup();
   uart_init();
-  gps_init();
+  record_button_init();
 
+  GPS_OFF();
+  
   // Mount filesystem and register work area
   result = f_mount(0, &Fatfs);		/* Register volume work area (never fails) */
 	if ( result != FR_OK ) die();
-
-  LED_ON(); 
+  
+  
 
   while(1)
   {
-    len = uart_read(1, buf);
-    if (len > 0)
+    // if waking up in record on state do not go to sleep
+    if ( ! is_record_on() )
+      LPM0;
+    LED_ON();
+    gps_init();
+    nextIn = 0;
+    while ( is_record_on() )
     {
-      line[nextIn++] = buf[0];
-      if (buf[0] == '\n')
+      len = uart_read(1, buf);
+      if (len > 0)
       {
-        GPSDataType data;
-        
-        if ( parse_line(line, &data) == GPS_VALID )
+        line[nextIn++] = buf[0];
+        if (buf[0] == '\n')
         {
-          LED_ON();
-            
-          len = spool_coords( data.latitude, data.longitude, line );
-          if ( ! bFileCreated )
+          GPSDataType data;
+          
+          if ( ( parse_line(line, &data) == GPS_VALID ) && ( sampleCounter <= MAX_SAMPLES ) )
           {
-            result = f_open( &Fil, "GPS.TXT", FA_WRITE | FA_CREATE_ALWAYS );
-            if ( result != FR_OK ) die();
-            bFileCreated = 1;
+            LED_ON();
+  
+            // update FS time
+            update_fattime(data.date.year, data.date.month, data.date.day, 
+                           data.time.hour, data.time.minutes, data.time.seconds);
+  
+            if ( ! bFileCreated )
+            {
+              sprintf(line, "%02d%02d%02d%02d.kml", data.date.month, data.date.day,
+                      data.time.hour, data.time.minutes);
+              result = f_open( &Fil, line, FA_WRITE | FA_CREATE_ALWAYS );
+              if ( result != FR_OK ) 
+                die();
+              result = f_write( &Fil, KML_Header, strlen(KML_Header), &bw );
+              if ( ( result != FR_OK ) || ( bw < len ) ) die();
+              bFileCreated = 1;
+            }
+            
+            len = spool_coords( data.latitude, data.longitude, line );
+            result = f_write( &Fil, line, len, &bw );
+            if ( ( result != FR_OK ) || ( bw < len ) ) die();
+            
+            sampleCounter++;
+            LED_OFF();
           }
-          
-          result = f_write( &Fil, line, len, &bw );
-          if ( ( result != FR_OK ) || ( bw < len ) ) die();
-          
-          LED_OFF();
+          nextIn = 0;
         }
-        else if ( bFileCreated )
-        {
-          GPS_OFF();
-          result = f_close(&Fil);
-          if ( result != FR_OK ) die();
-          break;
-        }
-        nextIn = 0;
       }
     }
-    else
-    { // nothing to read
-      // sleep a while
-    }
+    GPS_OFF();
+    result = f_write( &Fil, KML_Footer, strlen(KML_Footer), &bw );
+    if ( ( result != FR_OK ) || ( bw < len ) ) 
+      die();
+    result = f_close(&Fil);
+    if ( result != FR_OK ) 
+      die();
+    bFileCreated = 0;
   }
-  
-  __disable_interrupt();
-  LPM4;
 }
 
 void led_setup(void);
@@ -143,5 +161,20 @@ void timers_setup(void)
 
 UINT spool_coords( CoordType latitude, CoordType longitude, char* str )
 {
-  return sprintf(str, "%lf, %lf, 0\n", latitude,longitude);
+  return sprintf(str, "%.14lf,%.14lf,0 \r\n",longitude ,latitude);
+}
+
+void record_button_init(void)
+{
+  BUTTON_REN |= BUTTON_BIT;
+  BUTTON_OUT |= BUTTON_BIT;
+  BUTTON_IE  |= BUTTON_BIT;
+  BUTTON_IES |= BUTTON_BIT;
+}
+
+#pragma vector=PORT1_VECTOR
+__interrupt void ButtonISR(void)
+{
+  BUTTON_IFG &= ~BUTTON_BIT;
+  LPM0_EXIT;
 }
