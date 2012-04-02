@@ -106,12 +106,15 @@ void main(void)
     }
     GPS_OFF();
     LED_OFF();
-    result = f_write( &Fil, KML_Footer, strlen(KML_Footer), &bw );
-    if ( ( result != FR_OK ) || ( bw < len ) ) 
-      die();
-    result = f_close(&Fil);
-    if ( result != FR_OK ) 
-      die();
+    if ( bFileCreated )
+    {
+      result = f_write( &Fil, KML_Footer, strlen(KML_Footer), &bw );
+      if ( ( result != FR_OK ) || ( bw < len ) ) 
+        die();
+      result = f_close(&Fil);
+      if ( result != FR_OK ) 
+        die();
+    }
     bFileCreated = 0;
   }
 }
