@@ -1,0 +1,2 @@
+An MSP430 (TI) + U-Blox based application for recording a running/drivig course to a KML file on an SD card.
+The project is developed for a workshop of embedded programming at the School of Computer Science at Tel Aviv University - Fall 2011-2012.
